@@ -1,4 +1,4 @@
 # A basic redirect rule
 [[redirects]]
   from = "/*"
-  to = "/crossword/:splat"
+  to = "https://jessicasachs.io/crossword/:splat"
