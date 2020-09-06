@@ -84,8 +84,8 @@
       top: 0;
 
       z-index: 1;
-      width: fill-available;
-      height: fill-available;
+      width: calc(#{$cellSize} + 0.12rem);
+      height: calc(#{$cellSize} + 0.12rem);
 
       box-shadow: 0 0 0 3px deeppink inset;
 
