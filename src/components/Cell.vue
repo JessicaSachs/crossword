@@ -124,7 +124,7 @@
     &.blocked-out {
       background: black;
       color: transparent;
-      user-select: none;
+      pointer-events: none;
     }
 
     .number {

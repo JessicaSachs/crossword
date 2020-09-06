@@ -65,9 +65,9 @@ describe('Crossword', () => {
       it('renders successfully', () => {
         mount(Crossword, {
           propsData: { crossword: bigCrossword, solved: true }
-        }).then(() => {
-          expect(Cypress.vueWrapper).to.exist
         })
+
+        expect(Cypress.vueWrapper).to.exist
       })
     })
 
@@ -75,9 +75,9 @@ describe('Crossword', () => {
       it('renders successfully', () => {
         mount(Crossword, {
           propsData: { crossword: bigCrossword, solved: false }
-        }).then(() => {
-          expect(Cypress.vueWrapper).to.exist
         })
+
+        expect(Cypress.vueWrapper).to.exist
       })
     })
   })
