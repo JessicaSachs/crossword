@@ -54,6 +54,7 @@
 </script>
 
 <style lang="scss" scoped>
+
   $cellSize: calc(2rem * var(--scale, 1));
 
   input {
@@ -76,6 +77,12 @@
 
   .cell input:focus-within + span {
     color: deeppink;
+    @media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
+      &:before {
+        width: fill-available !important;
+        height: fill-available !important;
+      }
+    }
 
     &:before {
       position: absolute;
@@ -84,6 +91,8 @@
       top: 0;
 
       z-index: 1;
+
+
       width: calc(#{$cellSize} + 0.12rem);
       height: calc(#{$cellSize} + 0.12rem);
 
