@@ -1,12 +1,11 @@
 /// <reference types="cypress" />
 import Gameboard from '@/components/Gameboard'
 import { mount } from 'cypress-vue-unit-test'
-import { crossword } from '../fixtures/crosswords'
+import { helloWorld as crossword } from '../fixtures/crosswords'
 
 describe('Gameboard', () => {
-  it('renders successfully', () => {
-    mount(Gameboard)
-    cy.get('[data-testid=gameboard]').should('exist')
+  it('requires a crossword', () => {
+    expect(() => mount(Gameboard)).to.throw
   })
 
   it('has a crossword puzzle', () => {
@@ -22,14 +21,47 @@ describe('Gameboard', () => {
   })
 
   it('renders the crossword puzzle successfully', () => {
-    cy.log('the crossword', crossword)
     mount(Gameboard, {
       propsData: {
         crossword
       }
     })
 
-    cy.get('[data-testid=gameboard] [data-testid=cells')
-      .should('have.length', crossword.gridnums.filter(g => g > 0).length)
+    cy.get('[data-testid=gameboard] [data-testid=cell]')
+      .should('have.length', crossword.grid.length)
+  })
+
+  it('numbers the crossword puzzle correctly', ()  => {
+    mount(Gameboard, {
+      propsData: {
+        crossword
+      }
+    })
+
+    cy.get('[data-testid=gameboard] [data-testid=cell]').then((cells) => {
+      Array.from(cells).forEach((c, idx) => {
+        expect(c).to.contain.text(crossword.grid[idx])
+
+        if (crossword.gridnums[idx] > 0) {
+          expect(c).to.contain.text(crossword.gridnums[idx])
+        } else {
+          expect(c).not.to.contain.text(0)
+        }
+      })
+    })
+  })
+
+  it('renders the correct number of rows and columns', () => {
+    mount(Gameboard, {
+      propsData: {
+        crossword
+      }
+    })
+
+    cy.get('[data-testid=gameboard] [data-testid=row]')
+      .should('have.length', crossword.size.rows)
+
+    cy.get('[data-testid=gameboard] [data-testid=row]')
+      .should('have.length', crossword.size.cols)
   })
 })

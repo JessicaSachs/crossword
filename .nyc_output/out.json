@@ -1,0 +1,238 @@
+{
+  "/Users/jess/projects/personal/crossword/src/components/Gameboard.vue": {
+    "path": "/Users/jess/projects/personal/crossword/src/components/Gameboard.vue",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 23,
+          "column": 6
+        },
+        "end": {
+          "line": 29,
+          "column": 7
+        }
+      },
+      "1": {
+        "start": {
+          "line": 24,
+          "column": 8
+        },
+        "end": {
+          "line": 26,
+          "column": 9
+        }
+      },
+      "2": {
+        "start": {
+          "line": 25,
+          "column": 10
+        },
+        "end": {
+          "line": 25,
+          "column": 52
+        }
+      },
+      "3": {
+        "start": {
+          "line": 28,
+          "column": 8
+        },
+        "end": {
+          "line": 28,
+          "column": 17
+        }
+      },
+      "4": {
+        "start": {
+          "line": 32,
+          "column": 6
+        },
+        "end": {
+          "line": 32,
+          "column": 65
+        }
+      },
+      "5": {
+        "start": {
+          "line": 35,
+          "column": 6
+        },
+        "end": {
+          "line": 35,
+          "column": 69
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 22,
+            "column": 4
+          },
+          "end": {
+            "line": 22,
+            "column": 5
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 22,
+            "column": 20
+          },
+          "end": {
+            "line": 30,
+            "column": 5
+          }
+        },
+        "line": 22
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": {
+            "line": 23,
+            "column": 13
+          },
+          "end": {
+            "line": 23,
+            "column": 14
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 23,
+            "column": 34
+          },
+          "end": {
+            "line": 29,
+            "column": 7
+          }
+        },
+        "line": 23
+      },
+      "2": {
+        "name": "(anonymous_2)",
+        "decl": {
+          "start": {
+            "line": 31,
+            "column": 4
+          },
+          "end": {
+            "line": 31,
+            "column": 5
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 31,
+            "column": 20
+          },
+          "end": {
+            "line": 33,
+            "column": 5
+          }
+        },
+        "line": 31
+      },
+      "3": {
+        "name": "(anonymous_3)",
+        "decl": {
+          "start": {
+            "line": 34,
+            "column": 4
+          },
+          "end": {
+            "line": 34,
+            "column": 5
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 34,
+            "column": 20
+          },
+          "end": {
+            "line": 36,
+            "column": 5
+          }
+        },
+        "line": 34
+      }
+    },
+    "branchMap": {
+      "0": {
+        "loc": {
+          "start": {
+            "line": 24,
+            "column": 8
+          },
+          "end": {
+            "line": 26,
+            "column": 9
+          }
+        },
+        "type": "if",
+        "locations": [
+          {
+            "start": {
+              "line": 24,
+              "column": 8
+            },
+            "end": {
+              "line": 26,
+              "column": 9
+            }
+          },
+          {
+            "start": {
+              "line": 24,
+              "column": 8
+            },
+            "end": {
+              "line": 26,
+              "column": 9
+            }
+          }
+        ],
+        "line": 24
+      }
+    },
+    "s": {
+      "0": 14,
+      "1": 350,
+      "2": 28,
+      "3": 322,
+      "4": 14,
+      "5": 14
+    },
+    "f": {
+      "0": 14,
+      "1": 350,
+      "2": 14,
+      "3": 14
+    },
+    "b": {
+      "0": [
+        28,
+        322
+      ]
+    },
+    "inputSourceMap": {
+      "version": 3,
+      "sources": [
+        "/Users/jess/projects/personal/crossword/src/components/Gameboard.vue"
+      ],
+      "names": [],
+      "mappings": ";;;;;;;;;;;;;;;AAeA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;;AAEA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA",
+      "file": "Gameboard.vue",
+      "sourceRoot": "",
+      "sourcesContent": [
+        "<template>\n  <table class=\"gameboard\" data-testid=\"gameboard\">\n    <tr v-for=\"(letters, i) in lettersByRows\" :key=\"'r-' + i\" data-testid=\"row\">\n      <td v-for=\"(letter, j) in letters\"\n          :key=\"`r-${i}-c-${j}`\"\n          class=\"cell\"\n          data-testid=\"cell\"\n      >\n        {{ letter }} {{ numberForCell(i, j) }}\n      </td>\n    </tr>\n  </table>\n</template>\n\n<script>\n  import { chunk } from 'lodash'\n  export default {\n    props: {\n      crossword: { type: Object, required: true }\n    },\n    computed: {\n      numberForCell() {\n        return (rowIdx, cellIdx) => {\n          if (this.numbersByRows[rowIdx][cellIdx] > 0) {\n            return this.numbersByRows[rowIdx][cellIdx]\n          }\n\n          return ''\n        }\n      },\n      lettersByRows() {\n        return chunk(this.crossword.grid, this.crossword.size.cols)\n      },\n      numbersByRows() {\n        return chunk(this.crossword.gridnums, this.crossword.size.cols)\n      },\n    }\n  }\n</script>\n\n<style lang=\"scss\" scoped>\n  .cell {\n    text-align: center;\n  }\n</style>\n"
+      ]
+    },
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "252f9bc9b012a3deca6cbee28c11efab5edfffbd"
+  }
+}
