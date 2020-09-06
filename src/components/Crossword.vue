@@ -25,9 +25,6 @@
     methods: {
       focus(clueNumber) {
         const rowIdx = this.numbersByRows.findIndex(row => row.indexOf(clueNumber) !== -1)
-
-        console.log('rowIdx', rowIdx, this.numbersByRows.findIndex)
-        debugger;
         const cellIdx = this.numbersByRows[rowIdx].indexOf(clueNumber)
         this.$refs[`r-${rowIdx}-c-${cellIdx}`][0].focus()
       }
