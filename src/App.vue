@@ -1,24 +1,46 @@
 <template>
   <div id="app">
     <h1>Component Testing with Crosswords</h1>
-    <form @submit.prevent="reset() && fetchCrossword()" @reset="reset">
-      <button type="submit">New Crossword</button>
-      <button data-testid="reset" type="reset">Clear Crossword</button>
-    </form>
-    <div v-if="!crossword">Loading</div>
-    <template v-else>
+    <template v-if="crossword">
       <h2 data-testid="crossword-title" v-html="crossword.title"></h2>
-      <button data-testid="prev" @click="getPreviousDay">Previous Day</button>
-      <button data-testid="next" @click="getNextDay">Next Day</button>
-      <Crossword :crossword="crossword" :key="crosswordKey" />
+      <nav>
+        <p>Try a new Puzzle</p>
+
+        <button data-testid="prev" @click="getPreviousDay">Previous Day</button>
+        <button data-testid="next" @click="getNextDay">Next Day</button>
+
+        <p>Puzzle Controls</p>
+
+        <form @reset="reset" @submit.prevent>
+          <button data-testid="reset" type="reset">Clear Crossword</button>
+          <button @click="solved = !solved" data-testid="auto-solve">Magic Solve Button</button>
+        </form>
+
+        <p>Size Controls</p>
+        <button @click="showCrossword = !showCrossword">Show/Hide</button>
+        <button @click="toggleCrosswordSize(1)">1.0x</button>
+        <button @click="toggleCrosswordSize(0.8)">0.8x</button>
+        <button @click="toggleCrosswordSize(0.5)">0.5x</button>
+      </nav>
+      <main>
+        <div v-if="!crossword">Loading</div>
+        <Crossword class="crossword" :crossword="crossword" :solved="solved" :key="crosswordKey" v-show="showCrossword"/>
+        <ul>
+          <li v-for="clue in clues">
+            <h3 v-if="clue === 'Across' || clue === 'Down'">{{ clue }}</h3>
+            <template v-else>{{ clue }}</template>
+          </li>
+        </ul>
+      </main>
+
     </template>
   </div>
 </template>
 
 <script>
-import Crossword from '@/components/Crossword'
+  import Crossword from '@/components/Crossword'
 
-/** Date Utils **/
+  /** Date Utils **/
 const oneDay = 1000 * 60 * 60 * 24
 const formatDate = d => d.toISOString().slice(0, 10)
 const addTime = (d, amount) => new Date(new Date(d).getTime() + amount)
@@ -31,9 +53,21 @@ export default {
       crossword: null,
       crosswordKey: date,
       date,
+      solved: false,
+      showCrossword: true,
+    }
+  },
+  computed: {
+    clues() {
+      return ['Across', ...this.crossword.clues.across, 'Down', ...this.crossword.clues.down]
     }
   },
   methods: {
+    toggleCrosswordSize(size) {
+      const getProp = () => document.documentElement.style.getPropertyValue('--scale')
+      const setProp = (val) => document.documentElement.style.setProperty('--scale', val)
+      setProp(size)
+    },
     reset() {
       this.crosswordKey = Date.now()
     },
@@ -54,6 +88,7 @@ export default {
   },
   watch: {
     date(newDate) {
+      this.solved = false;
       this.crosswordKey = newDate;
     }
   },
@@ -75,4 +110,30 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+  ul {
+    display: flex;
+    list-style-type: none;
+    text-align: left;
+    flex-wrap: wrap;
+    flex-direction: column;
+    grid-column-gap: 1rem;
+    height: 740px;
+    overflow: scroll;
+    border-right: 20px solid white;
+
+    li {
+      font-size: 0.8rem;
+      width: 18ch;
+    }
+  }
+
+  main {
+    margin: 4.17rem auto;
+    width: 1200px;
+  }
+
+  .crossword {
+    float: right;
+  }
 </style>

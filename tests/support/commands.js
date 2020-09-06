@@ -35,7 +35,7 @@ Cypress.Commands.add("fillCrossword", { prevSubject: 'element' }, (subject, opti
       const letters = options.partially ? options.crossword.grid.slice(0, 15) : options.crossword.grid
       letters.forEach((letter, idx) => {
         if (letter !== '.') {
-          cy.wrap(inputs[idx]).type(letter)
+          options.instant ? inputs[idx] = letter : cy.wrap(inputs[idx]).type(letter)
         }
       })
     }).get(subject)

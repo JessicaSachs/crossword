@@ -1,4 +1,60 @@
+//@import "./reset.scss";
+
 * {
   font-family: Helvetica, sans-serif;
-  font-size: 15px;
+}
+
+
+@media print {
+  // Layout Overrides
+  * {
+    font-size: 15px;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .crossword {
+    float: none;
+    background: white;
+    margin: 0 auto;
+  }
+
+  main {
+    display: block;
+
+    li {
+      width: 18ch;
+    }
+    > * {
+      width: auto;
+    }
+  }
+
+  // Cell Overrides
+  .cell {
+    border: 1px solid black;
+    box-shadow: none;
+    background: white;
+    -webkit-print-color-adjust: exact !important;
+
+    span:first-of-type {
+      display: none;
+    }
+
+    input {
+      //border: none;
+      //outline: none;
+      //box-shadow: none;
+      //background: white;
+    }
+
+    &.blocked-out {
+
+
+      //background: black;
+      //box-shadow: 0 0 0 4px deeppink inset;
+    }
+  }
 }

@@ -50,9 +50,7 @@
 </script>
 
 <style lang="scss" scoped>
-  $cellSize: 2.8rem;
-  $numberOffsetTop: 1.75rem;
-  $numberOffsetLeft: 1.75rem;
+  $cellSize: calc(2rem * var(--scale, 1));
 
   input {
     text-transform: uppercase;
@@ -81,7 +79,6 @@
       left: 0;
       top: 0;
 
-      margin: 0px 1px 1px 0px;
       z-index: 1;
       width: fill-available;
       height: fill-available;
@@ -92,7 +89,8 @@
   }
 
   .cell {
-    box-shadow: 0 0 0 1px black;
+    /*box-shadow: 0 0 0 1px black;*/
+    border: 1px solid black;
 
     text-transform: uppercase;
     position: relative;
@@ -106,7 +104,7 @@
 
     width: 100%;
 
-    font-size: 1rem;
+    font-size: 0.8rem;
 
     vertical-align: top;
 
@@ -121,7 +119,7 @@
 
       display: inline-block;
 
-      font-size: .75rem;
+      font-size: .6rem;
 
       top: .2rem;
       right: .2rem;

@@ -4,6 +4,7 @@ import { crossword } from '../fixtures/crosswords'
 
 describe('App', () => {
   beforeEach(() => {
+    cy.viewport(1600, 1000)
     mount(App)
     cy.get('[data-testid=crossword]').as('crossword')
     cy.get('[data-testid=crossword-title]').as('title')
@@ -12,7 +13,7 @@ describe('App', () => {
     cy.get('[data-testid=reset').as('reset')
   })
 
-  it('renders the crossword puzzle on load', function() {
+  it.only('renders the crossword puzzle on load', function() {
     expect(cy.get('@crossword')).to.exist
   })
 
@@ -30,8 +31,10 @@ describe('App', () => {
 
   it('rerenders the crossword when you go to another day', () => {
     cy.get('@crossword')
-      .fillCrossword({ crossword, partially: true })
+      .fillCrossword({ crossword, instant: true })
       .get('@prev').click()
+      .getCrossword().should('be.empty')
+      .get('@next').click()
       .getCrossword().should('be.empty')
   })
 
