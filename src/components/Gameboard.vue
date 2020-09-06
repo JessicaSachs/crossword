@@ -1,13 +1,13 @@
 <template>
-  <table class="gameboard" data-testid="gameboard">
-    <tr v-for="(letters, i) in lettersByRows" :key="'r-' + i" data-testid="row">
+  <div class="gameboard" data-testid="gameboard">
+    <div v-for="(letters, i) in lettersByRows" :key="`r-${i}`" data-testid="row" class="row">
       <Cell v-for="(letter, j) in letters"
             :key="`r-${i}-c-${j}`"
             :letter="letter === '.' ? '' : letter"
             :number="numberForCell(i, j)"
       />
-    </tr>
-  </table>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -39,7 +39,17 @@
 </script>
 
 <style lang="scss" scoped>
-  .cell {
-    text-align: center;
+  .gameboard {
+    display: grid;
+    position: relative;
+
+    border: 1px solid black;
+    overflow: scroll;
+  }
+
+  .row {
+    display: flex;
+    position: relative;
+    width: 100%;
   }
 </style>

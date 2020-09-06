@@ -78,15 +78,15 @@
       }
     },
     "s": {
-      "0": 500
+      "0": 3587
     },
     "f": {
-      "0": 500
+      "0": 3587
     },
     "b": {
       "0": [
-        320,
-        180
+        873,
+        2714
       ]
     },
     "inputSourceMap": {
@@ -99,11 +99,11 @@
       "file": "Cell.vue",
       "sourceRoot": "",
       "sourcesContent": [
-        "<template>\n  <span class=\"cell\" data-testid=\"cell\" :class=\"classes\">\n    {{ letter }}\n    <span class=\"number\" data-testid=\"cell-number\">\n      {{ number !== 0 ? number : '' }}\n    </span>\n  </span>\n</template>\n\n<script>\n  export default {\n    props: {\n      letter: { type: String, default: '' },\n      number: { type: [String, Number], optional: true , default: ''},\n    },\n    computed: {\n      classes() {\n        return !this.letter ? 'blocked-out' : ''\n      }\n    }\n  }\n</script>\n\n<style lang=\"scss\" scoped>\n  .cell {\n    /*font-size: 2rem;*/\n\n    position: relative;\n\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n\n    width: 3rem;\n    height: 3rem;\n    padding: 0.25rem;\n\n    font-size: 1rem;\n\n    border: 1px solid black;\n\n    &.blocked-out {\n      background: black;\n    }\n\n    .number {\n      position: absolute;\n\n      display: inline-block;\n      margin-bottom: 1.75rem;\n      margin-left: 1.75rem;\n      font-size: .75em;\n\n      color: #666;\n    }\n  }\n</style>\n"
+        "<template>\n  <span class=\"cell\" data-testid=\"cell\" :class=\"classes\">\n    {{ letter }}\n    <span class=\"number\" data-testid=\"cell-number\">\n      {{ number !== 0 ? number : '' }}\n    </span>\n  </span>\n</template>\n\n<script>\n  export default {\n    props: {\n      letter: { type: String, default: '' },\n      number: { type: [String, Number], optional: true , default: ''},\n    },\n    computed: {\n      classes() {\n        return !this.letter ? 'blocked-out' : ''\n      }\n    }\n  }\n</script>\n\n<style lang=\"scss\" scoped>\n  .cell {\n    position: relative;\n\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n\n    min-width: 2.4rem;\n    min-height: 2.4rem;\n\n    width: 100%;\n\n    padding: 0.25rem;\n\n    font-size: 1rem;\n\n    border: 1px solid black;\n\n    vertical-align: top;\n\n    &.blocked-out {\n      background: black;\n    }\n\n    .number {\n      position: absolute;\n\n      display: inline-block;\n      margin-bottom: 1.75rem;\n      margin-left: 1.75rem;\n      font-size: .75rem;\n\n      color: #666;\n    }\n  }\n</style>\n"
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "e120fa76c337c6bb811fe4c28a395a227bb4efca"
+    "hash": "31ace99bd02b1aa311abe6f6069b524640ee4153"
   },
   "/Users/jess/projects/personal/crossword/src/components/Gameboard.vue": {
     "path": "/Users/jess/projects/personal/crossword/src/components/Gameboard.vue",
@@ -306,23 +306,23 @@
       }
     },
     "s": {
-      "0": 20,
-      "1": 500,
-      "2": 40,
-      "3": 460,
-      "4": 20,
-      "5": 20
+      "0": 27,
+      "1": 3587,
+      "2": 880,
+      "3": 2707,
+      "4": 27,
+      "5": 27
     },
     "f": {
-      "0": 20,
-      "1": 500,
-      "2": 20,
-      "3": 20
+      "0": 27,
+      "1": 3587,
+      "2": 27,
+      "3": 27
     },
     "b": {
       "0": [
-        40,
-        460
+        880,
+        2707
       ]
     },
     "inputSourceMap": {
@@ -335,10 +335,10 @@
       "file": "Gameboard.vue",
       "sourceRoot": "",
       "sourcesContent": [
-        "<template>\n  <table class=\"gameboard\" data-testid=\"gameboard\">\n    <tr v-for=\"(letters, i) in lettersByRows\" :key=\"'r-' + i\" data-testid=\"row\">\n      <Cell v-for=\"(letter, j) in letters\"\n            :key=\"`r-${i}-c-${j}`\"\n            :letter=\"letter === '.' ? '' : letter\"\n            :number=\"numberForCell(i, j)\"\n      />\n    </tr>\n  </table>\n</template>\n\n<script>\n  import Cell from './Cell'\n  import { chunk } from 'lodash'\n  export default {\n    components: { Cell },\n    props: {\n      crossword: { type: Object, required: true }\n    },\n    computed: {\n      numberForCell() {\n        return (rowIdx, cellIdx) => {\n          if (this.numbersByRows[rowIdx][cellIdx] > 0) {\n            return this.numbersByRows[rowIdx][cellIdx]\n          }\n\n          return ''\n        }\n      },\n      lettersByRows() {\n        return chunk(this.crossword.grid, this.crossword.size.cols)\n      },\n      numbersByRows() {\n        return chunk(this.crossword.gridnums, this.crossword.size.cols)\n      },\n    }\n  }\n</script>\n\n<style lang=\"scss\" scoped>\n  .cell {\n    text-align: center;\n  }\n</style>\n"
+        "<template>\n  <div class=\"gameboard\" data-testid=\"gameboard\">\n    <div v-for=\"(letters, i) in lettersByRows\" :key=\"`r-${i}`\" data-testid=\"row\" class=\"row\">\n      <Cell v-for=\"(letter, j) in letters\"\n            :key=\"`r-${i}-c-${j}`\"\n            :letter=\"letter === '.' ? '' : letter\"\n            :number=\"numberForCell(i, j)\"\n      />\n    </div>\n  </div>\n</template>\n\n<script>\n  import Cell from './Cell'\n  import { chunk } from 'lodash'\n  export default {\n    components: { Cell },\n    props: {\n      crossword: { type: Object, required: true }\n    },\n    computed: {\n      numberForCell() {\n        return (rowIdx, cellIdx) => {\n          if (this.numbersByRows[rowIdx][cellIdx] > 0) {\n            return this.numbersByRows[rowIdx][cellIdx]\n          }\n\n          return ''\n        }\n      },\n      lettersByRows() {\n        return chunk(this.crossword.grid, this.crossword.size.cols)\n      },\n      numbersByRows() {\n        return chunk(this.crossword.gridnums, this.crossword.size.cols)\n      },\n    }\n  }\n</script>\n\n<style lang=\"scss\" scoped>\n  .gameboard {\n    display: grid;\n    position: relative;\n\n    border: 1px solid black;\n    overflow: scroll;\n  }\n\n  .row {\n    display: flex;\n    position: relative;\n    width: 100%;\n  }\n</style>\n"
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "0505fb964a6c6a6cd8bdead0355dc944345782bc"
+    "hash": "2fe7752d3b988c5c41836e364d92a68db8d4d660"
   }
 }

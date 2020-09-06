@@ -1,11 +1,23 @@
 /// <reference types="cypress" />
 import Gameboard from '@/components/Gameboard'
 import { mount } from 'cypress-vue-unit-test'
-import { helloWorld as crossword } from '../fixtures/crosswords'
+import {
+  helloWorld as crossword,
+  crossword as bigCrossword } from '../fixtures/crosswords'
 
 describe('Gameboard', () => {
   it('requires a crossword', () => {
     expect(() => mount(Gameboard)).to.throw
+  })
+
+  describe('larger board', () => {
+    it('renders successfully', () => {
+      mount(Gameboard, {
+        propsData: { crossword: bigCrossword }
+      }).then(() => {
+        expect(Cypress.vueWrapper).to.exist
+      })
+    })
   })
 
   describe('successfully renders', () => {

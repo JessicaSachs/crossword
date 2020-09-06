@@ -23,21 +23,24 @@
 
 <style lang="scss" scoped>
   .cell {
-    /*font-size: 2rem;*/
-
     position: relative;
 
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    width: 3rem;
-    height: 3rem;
+    min-width: 2.4rem;
+    min-height: 2.4rem;
+
+    width: 100%;
+
     padding: 0.25rem;
 
     font-size: 1rem;
 
     border: 1px solid black;
+
+    vertical-align: top;
 
     &.blocked-out {
       background: black;
@@ -49,7 +52,7 @@
       display: inline-block;
       margin-bottom: 1.75rem;
       margin-left: 1.75rem;
-      font-size: .75em;
+      font-size: .75rem;
 
       color: #666;
     }
