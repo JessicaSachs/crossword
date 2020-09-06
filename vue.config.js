@@ -1,6 +1,11 @@
 module.exports = {
   outputDir: './dist/crossword',
-  title: 'Crossword 👾',
+  pages: {
+    index: {
+      entry: 'src/main.js',
+      title: 'Crossword Game'
+    }
+  },
   publicPath: process.env.NODE_ENV === 'production'
     ? '/crossword/'
     : '/'
