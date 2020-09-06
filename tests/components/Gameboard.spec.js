@@ -30,7 +30,7 @@ describe('Gameboard', () => {
       cy.get('@cells').should('have.length', crossword.grid.length)
     })
 
-    it('numbers the crossword puzzle correctly', ()  => {
+    it('numbers the crossword puzzle correctly', () => {
       cy.get('@cells').then((cells) => {
         Array.from(cells).forEach((c, idx) => {
           expect(c).to.contain.text(crossword.grid[idx])

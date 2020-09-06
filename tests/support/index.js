@@ -21,3 +21,5 @@ require('cypress-vue-unit-test/dist/support')
 
 // Alternatively you can use CommonJS syntax:
 require('./commands')
+
+require('@/styles/index.scss')

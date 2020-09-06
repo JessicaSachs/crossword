@@ -1,6 +1,9 @@
 <template>
-  <span :data-number="number" class="cell" data-testid="cell">
+  <span class="cell" data-testid="cell">
     {{ letter }}
+    <span class="number" data-testid="cell-number">
+      {{ number }}
+    </span>
   </span>
 </template>
 
@@ -15,8 +18,17 @@
 
 <style lang="scss" scoped>
   .cell {
-    :after {
-      content: attr(data-number)
+    position: relative;
+    width: 1.25rem;
+    height: 1.25rem;
+    font-size: 1rem;
+
+    .number {
+      position: absolute;
+      color: #666;
+      top: 0;
+      left: 2ch;
+      font-size: .75em;
     }
   }
 </style>
