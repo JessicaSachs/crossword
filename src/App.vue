@@ -85,7 +85,7 @@ export default {
       this.fetchCrossword()
     },
     fetchCrossword(date = this.date) {
-      return fetch(`https://raw.githubusercontent.com/doshea/nyt_crosswords/master/${date.replaceAll('-', '/')}.json`)
+      return fetch(`https://raw.githubusercontent.com/doshea/nyt_crosswords/master/${date.replace(/-+/g, '/')}.json`)
         .then(response => response.json())
         .then(payload => this.crossword = payload)
         .catch(err => console.error(err))
