@@ -1,20 +1,21 @@
 <template>
   <table class="gameboard" data-testid="gameboard">
     <tr v-for="(letters, i) in lettersByRows" :key="'r-' + i" data-testid="row">
-      <td v-for="(letter, j) in letters"
+      <td>
+        <Cell v-for="(letter, j) in letters"
           :key="`r-${i}-c-${j}`"
-          class="cell"
-          data-testid="cell"
-      >
-        {{ letter }} {{ numberForCell(i, j) }}
+          :letter="letter" :number="numberForCell(i, j)"
+        />
       </td>
     </tr>
   </table>
 </template>
 
 <script>
+  import Cell from './Cell'
   import { chunk } from 'lodash'
   export default {
+    components: { Cell },
     props: {
       crossword: { type: Object, required: true }
     },

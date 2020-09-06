@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1599351453161" clover="3.2.0">
-  <project timestamp="1599351453161" name="All files">
+<coverage generated="1599352037943" clover="3.2.0">
+  <project timestamp="1599352037943" name="All files">
     <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4" elements="12" coveredelements="12" complexity="0" loc="6" ncloc="6" packages="1" files="1" classes="1"/>
     <file name="Gameboard.vue" path="/Users/jess/projects/personal/crossword/src/components/Gameboard.vue">
       <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
-      <line num="23" count="14" type="stmt"/>
-      <line num="24" count="350" type="cond" truecount="2" falsecount="0"/>
-      <line num="25" count="28" type="stmt"/>
-      <line num="28" count="322" type="stmt"/>
-      <line num="32" count="14" type="stmt"/>
-      <line num="35" count="14" type="stmt"/>
+      <line num="24" count="14" type="stmt"/>
+      <line num="25" count="350" type="cond" truecount="2" falsecount="0"/>
+      <line num="26" count="28" type="stmt"/>
+      <line num="29" count="322" type="stmt"/>
+      <line num="33" count="14" type="stmt"/>
+      <line num="36" count="14" type="stmt"/>
     </file>
   </project>
 </coverage>
