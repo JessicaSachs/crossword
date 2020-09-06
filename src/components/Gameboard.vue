@@ -1,12 +1,11 @@
 <template>
   <table class="gameboard" data-testid="gameboard">
     <tr v-for="(letters, i) in lettersByRows" :key="'r-' + i" data-testid="row">
-      <td>
-        <Cell v-for="(letter, j) in letters"
-          :key="`r-${i}-c-${j}`"
-          :letter="letter" :number="numberForCell(i, j)"
-        />
-      </td>
+      <Cell v-for="(letter, j) in letters"
+            :key="`r-${i}-c-${j}`"
+            :letter="letter === '.' ? '' : letter"
+            :number="numberForCell(i, j)"
+      />
     </tr>
   </table>
 </template>

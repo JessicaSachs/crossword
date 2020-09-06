@@ -23,6 +23,8 @@
 
 <style lang="scss" scoped>
   .cell {
+    /*font-size: 2rem;*/
+
     position: relative;
 
     display: inline-flex;
@@ -45,8 +47,8 @@
       position: absolute;
 
       display: inline-block;
-      margin-bottom: 1rem;
-      margin-left: 1.25rem;
+      margin-bottom: 1.75rem;
+      margin-left: 1.75rem;
       font-size: .75em;
 
       color: #666;
