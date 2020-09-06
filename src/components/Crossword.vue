@@ -1,9 +1,11 @@
 <template>
-  <div class="gameboard" data-testid="gameboard">
+  <div class="crossword" data-testid="crossword">
     <div v-for="(letters, i) in lettersByRows" :key="`r-${i}`" data-testid="row" class="row">
       <Cell v-for="(letter, j) in letters"
+            :show-letter="solved"
             :key="`r-${i}-c-${j}`"
-            :letter="letter === '.' ? '' : letter"
+            :blocked-out="letter === '.'"
+            :letter="letter"
             :number="numberForCell(i, j)"
       />
     </div>
@@ -16,6 +18,7 @@
   export default {
     components: { Cell },
     props: {
+      solved: { type: Boolean, default: false },
       crossword: { type: Object, required: true }
     },
     computed: {
@@ -39,17 +42,19 @@
 </script>
 
 <style lang="scss" scoped>
-  .gameboard {
+  .crossword {
+    margin: 0 auto;
     display: grid;
     position: relative;
+    width: fit-content;
 
     border: 1px solid black;
-    overflow: scroll;
+    overflow: hidden;
   }
 
   .row {
     display: flex;
     position: relative;
-    width: 100%;
+    width: fit-content;
   }
 </style>

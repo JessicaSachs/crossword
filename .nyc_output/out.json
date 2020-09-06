@@ -4,12 +4,72 @@
     "statementMap": {
       "0": {
         "start": {
-          "line": 18,
+          "line": 27,
+          "column": 15
+        },
+        "end": {
+          "line": 29,
+          "column": 3
+        }
+      },
+      "1": {
+        "start": {
+          "line": 32,
           "column": 6
         },
         "end": {
-          "line": 18,
-          "column": 46
+          "line": 35,
+          "column": 7
+        }
+      },
+      "2": {
+        "start": {
+          "line": 33,
+          "column": 8
+        },
+        "end": {
+          "line": 33,
+          "column": 24
+        }
+      },
+      "3": {
+        "start": {
+          "line": 34,
+          "column": 8
+        },
+        "end": {
+          "line": 34,
+          "column": 15
+        }
+      },
+      "4": {
+        "start": {
+          "line": 36,
+          "column": 6
+        },
+        "end": {
+          "line": 36,
+          "column": 28
+        }
+      },
+      "5": {
+        "start": {
+          "line": 41,
+          "column": 6
+        },
+        "end": {
+          "line": 41,
+          "column": 49
+        }
+      },
+      "6": {
+        "start": {
+          "line": 46,
+          "column": 6
+        },
+        "end": {
+          "line": 46,
+          "column": 35
         }
       }
     },
@@ -18,75 +78,196 @@
         "name": "(anonymous_0)",
         "decl": {
           "start": {
-            "line": 17,
+            "line": 27,
+            "column": 8
+          },
+          "end": {
+            "line": 27,
+            "column": 9
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 27,
+            "column": 15
+          },
+          "end": {
+            "line": 29,
+            "column": 3
+          }
+        },
+        "line": 27
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": {
+            "line": 31,
             "column": 4
           },
           "end": {
-            "line": 17,
+            "line": 31,
             "column": 5
           }
         },
         "loc": {
           "start": {
-            "line": 17,
-            "column": 14
+            "line": 31,
+            "column": 25
           },
           "end": {
-            "line": 19,
+            "line": 37,
             "column": 5
           }
         },
-        "line": 17
+        "line": 31
+      },
+      "2": {
+        "name": "(anonymous_2)",
+        "decl": {
+          "start": {
+            "line": 40,
+            "column": 4
+          },
+          "end": {
+            "line": 40,
+            "column": 5
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 40,
+            "column": 14
+          },
+          "end": {
+            "line": 42,
+            "column": 5
+          }
+        },
+        "line": 40
+      },
+      "3": {
+        "name": "(anonymous_3)",
+        "decl": {
+          "start": {
+            "line": 45,
+            "column": 4
+          },
+          "end": {
+            "line": 45,
+            "column": 5
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 45,
+            "column": 20
+          },
+          "end": {
+            "line": 47,
+            "column": 5
+          }
+        },
+        "line": 45
       }
     },
     "branchMap": {
       "0": {
         "loc": {
           "start": {
-            "line": 18,
+            "line": 32,
+            "column": 6
+          },
+          "end": {
+            "line": 35,
+            "column": 7
+          }
+        },
+        "type": "if",
+        "locations": [
+          {
+            "start": {
+              "line": 32,
+              "column": 6
+            },
+            "end": {
+              "line": 35,
+              "column": 7
+            }
+          },
+          {
+            "start": {
+              "line": 32,
+              "column": 6
+            },
+            "end": {
+              "line": 35,
+              "column": 7
+            }
+          }
+        ],
+        "line": 32
+      },
+      "1": {
+        "loc": {
+          "start": {
+            "line": 41,
             "column": 13
           },
           "end": {
-            "line": 18,
-            "column": 46
+            "line": 41,
+            "column": 49
           }
         },
         "type": "cond-expr",
         "locations": [
           {
             "start": {
-              "line": 18,
-              "column": 28
+              "line": 41,
+              "column": 31
             },
             "end": {
-              "line": 18,
-              "column": 41
+              "line": 41,
+              "column": 44
             }
           },
           {
             "start": {
-              "line": 18,
-              "column": 44
+              "line": 41,
+              "column": 47
             },
             "end": {
-              "line": 18,
-              "column": 46
+              "line": 41,
+              "column": 49
             }
           }
         ],
-        "line": 18
+        "line": 41
       }
     },
     "s": {
-      "0": 3587
+      "0": 2205,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 2333,
+      "6": 0
     },
     "f": {
-      "0": 3587
+      "0": 2205,
+      "1": 0,
+      "2": 2333,
+      "3": 0
     },
     "b": {
       "0": [
-        873,
-        2714
+        0,
+        0
+      ],
+      "1": [
+        445,
+        1888
       ]
     },
     "inputSourceMap": {
@@ -95,76 +276,76 @@
         "/Users/jess/projects/personal/crossword/src/components/Cell.vue"
       ],
       "names": [],
-      "mappings": ";;;;;;;;;;AAUA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA",
+      "mappings": ";;;;;;;;;;;;;;;;;;AAkBA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA",
       "file": "Cell.vue",
       "sourceRoot": "",
       "sourcesContent": [
-        "<template>\n  <span class=\"cell\" data-testid=\"cell\" :class=\"classes\">\n    {{ letter }}\n    <span class=\"number\" data-testid=\"cell-number\">\n      {{ number !== 0 ? number : '' }}\n    </span>\n  </span>\n</template>\n\n<script>\n  export default {\n    props: {\n      letter: { type: String, default: '' },\n      number: { type: [String, Number], optional: true , default: ''},\n    },\n    computed: {\n      classes() {\n        return !this.letter ? 'blocked-out' : ''\n      }\n    }\n  }\n</script>\n\n<style lang=\"scss\" scoped>\n  .cell {\n    position: relative;\n\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n\n    min-width: 2.4rem;\n    min-height: 2.4rem;\n\n    width: 100%;\n\n    padding: 0.25rem;\n\n    font-size: 1rem;\n\n    border: 1px solid black;\n\n    vertical-align: top;\n\n    &.blocked-out {\n      background: black;\n    }\n\n    .number {\n      position: absolute;\n\n      display: inline-block;\n      margin-bottom: 1.75rem;\n      margin-left: 1.75rem;\n      font-size: .75rem;\n\n      color: #666;\n    }\n  }\n</style>\n"
+        "<template>\n  <span class=\"cell\" data-testid=\"cell\" :class=\"classes\">\n    <input type=\"text\"\n           data-testid=\"cell-input\"\n           :value=\"showLetter ? letter : value\"\n           :disabled=\"showLetter || blockedOut\"\n           autocomplete=\"false\"\n           @beforeinput.prevent=\"filterManyLetters\"\n           @input=\"filterManyLetters\"\n    >\n    <span/>\n    <span class=\"number\" data-testid=\"cell-number\">\n      {{ number !== 0 ? number : '' }}\n    </span>\n  </span>\n</template>\n\n<script>\n  export default {\n    props: {\n      showLetter: { type: Boolean, default: false },\n      editable: { type: Boolean, default: true },\n      blockedOut: { type: Boolean, default: false },\n      letter: { type: String, default: '' },\n      number: { type: [String, Number], optional: true , default: ''},\n    },\n    data: () => ({\n      value: ''\n    }),\n    methods: {\n      filterManyLetters(e) {\n        if (e.data == null) {\n          this.value = '';\n          return;\n        }\n        this.value = e.data[0]\n      },\n    },\n    computed: {\n      classes() {\n        return this.blockedOut ? 'blocked-out' : ''\n      }\n    },\n    watch: {\n      value(newValue) {\n        this.$emit('input', newValue)\n      }\n    }\n  }\n</script>\n\n<style lang=\"scss\" scoped>\n  $cellSize: 2.8rem;\n  $numberOffsetTop: 1.75rem;\n  $numberOffsetLeft: 1.75rem;\n\n  input {\n    text-transform: uppercase;\n    width: $cellSize;\n    height: $cellSize;\n    display: block;\n    text-align: center;\n    font-size: unset;\n    font-family: unset;\n    border: none;\n    outline: none;\n    box-shadow: none\n  }\n\n  .cell.blocked-out input {\n    color: transparent;\n    background: black;\n  }\n\n  .cell input:focus-within + span {\n    color: deeppink;\n\n    &:before {\n      position: absolute;\n      content: '';\n      left: 0;\n      top: 0;\n\n      margin: 0px 1px 1px 0px;\n      z-index: 1;\n      width: fill-available;\n      height: fill-available;\n\n      box-shadow: 0 0 0 3px deeppink inset;\n\n    }\n  }\n\n  .cell {\n    box-shadow: 0 0 0 1px black;\n\n    text-transform: uppercase;\n    position: relative;\n\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n\n    min-width: $cellSize;\n    min-height: $cellSize;\n\n    width: 100%;\n\n    font-size: 1rem;\n\n    vertical-align: top;\n\n    &.blocked-out {\n      background: black;\n      color: transparent;\n      user-select: none;\n    }\n\n    .number {\n      position: absolute;\n\n      display: inline-block;\n\n      font-size: .75rem;\n\n      top: .2rem;\n      right: .2rem;\n\n      color: #666;\n    }\n  }\n</style>\n"
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "31ace99bd02b1aa311abe6f6069b524640ee4153"
+    "hash": "803db72a5f140ff92d676f43704f7284dcfeb2a3"
   },
-  "/Users/jess/projects/personal/crossword/src/components/Gameboard.vue": {
-    "path": "/Users/jess/projects/personal/crossword/src/components/Gameboard.vue",
+  "/Users/jess/projects/personal/crossword/src/components/Crossword.vue": {
+    "path": "/Users/jess/projects/personal/crossword/src/components/Crossword.vue",
     "statementMap": {
       "0": {
         "start": {
-          "line": 23,
+          "line": 26,
           "column": 6
         },
         "end": {
-          "line": 29,
+          "line": 32,
           "column": 7
         }
       },
       "1": {
         "start": {
-          "line": 24,
+          "line": 27,
           "column": 8
         },
         "end": {
-          "line": 26,
+          "line": 29,
           "column": 9
         }
       },
       "2": {
         "start": {
-          "line": 25,
+          "line": 28,
           "column": 10
         },
         "end": {
-          "line": 25,
+          "line": 28,
           "column": 52
         }
       },
       "3": {
         "start": {
-          "line": 28,
+          "line": 31,
           "column": 8
         },
         "end": {
-          "line": 28,
+          "line": 31,
           "column": 17
         }
       },
       "4": {
         "start": {
-          "line": 32,
+          "line": 35,
           "column": 6
         },
         "end": {
-          "line": 32,
+          "line": 35,
           "column": 65
         }
       },
       "5": {
         "start": {
-          "line": 35,
+          "line": 38,
           "column": 6
         },
         "end": {
-          "line": 35,
+          "line": 38,
           "column": 69
         }
       }
@@ -174,65 +355,17 @@
         "name": "(anonymous_0)",
         "decl": {
           "start": {
-            "line": 22,
+            "line": 25,
             "column": 4
           },
           "end": {
-            "line": 22,
+            "line": 25,
             "column": 5
           }
         },
         "loc": {
           "start": {
-            "line": 22,
-            "column": 20
-          },
-          "end": {
-            "line": 30,
-            "column": 5
-          }
-        },
-        "line": 22
-      },
-      "1": {
-        "name": "(anonymous_1)",
-        "decl": {
-          "start": {
-            "line": 23,
-            "column": 13
-          },
-          "end": {
-            "line": 23,
-            "column": 14
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 23,
-            "column": 34
-          },
-          "end": {
-            "line": 29,
-            "column": 7
-          }
-        },
-        "line": 23
-      },
-      "2": {
-        "name": "(anonymous_2)",
-        "decl": {
-          "start": {
-            "line": 31,
-            "column": 4
-          },
-          "end": {
-            "line": 31,
-            "column": 5
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 31,
+            "line": 25,
             "column": 20
           },
           "end": {
@@ -240,10 +373,34 @@
             "column": 5
           }
         },
-        "line": 31
+        "line": 25
       },
-      "3": {
-        "name": "(anonymous_3)",
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": {
+            "line": 26,
+            "column": 13
+          },
+          "end": {
+            "line": 26,
+            "column": 14
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 26,
+            "column": 34
+          },
+          "end": {
+            "line": 32,
+            "column": 7
+          }
+        },
+        "line": 26
+      },
+      "2": {
+        "name": "(anonymous_2)",
         "decl": {
           "start": {
             "line": 34,
@@ -265,17 +422,41 @@
           }
         },
         "line": 34
+      },
+      "3": {
+        "name": "(anonymous_3)",
+        "decl": {
+          "start": {
+            "line": 37,
+            "column": 4
+          },
+          "end": {
+            "line": 37,
+            "column": 5
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 37,
+            "column": 20
+          },
+          "end": {
+            "line": 39,
+            "column": 5
+          }
+        },
+        "line": 37
       }
     },
     "branchMap": {
       "0": {
         "loc": {
           "start": {
-            "line": 24,
+            "line": 27,
             "column": 8
           },
           "end": {
-            "line": 26,
+            "line": 29,
             "column": 9
           }
         },
@@ -283,62 +464,619 @@
         "locations": [
           {
             "start": {
-              "line": 24,
+              "line": 27,
               "column": 8
             },
             "end": {
-              "line": 26,
+              "line": 29,
               "column": 9
             }
           },
           {
             "start": {
-              "line": 24,
+              "line": 27,
               "column": 8
             },
             "end": {
-              "line": 26,
+              "line": 29,
               "column": 9
             }
           }
         ],
-        "line": 24
+        "line": 27
       }
     },
     "s": {
-      "0": 27,
-      "1": 3587,
-      "2": 880,
-      "3": 2707,
-      "4": 27,
-      "5": 27
+      "0": 5,
+      "1": 2685,
+      "2": 730,
+      "3": 1955,
+      "4": 7,
+      "5": 7
     },
     "f": {
-      "0": 27,
-      "1": 3587,
-      "2": 27,
-      "3": 27
+      "0": 5,
+      "1": 2685,
+      "2": 7,
+      "3": 7
     },
     "b": {
       "0": [
-        880,
-        2707
+        730,
+        1955
       ]
     },
     "inputSourceMap": {
       "version": 3,
       "sources": [
-        "/Users/jess/projects/personal/crossword/src/components/Gameboard.vue"
+        "/Users/jess/projects/personal/crossword/src/components/Crossword.vue"
       ],
       "names": [],
-      "mappings": ";;;;;;;;;;;;;AAaA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;;AAEA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA",
-      "file": "Gameboard.vue",
+      "mappings": ";;;;;;;;;;;;;;;AAeA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;;AAEA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA",
+      "file": "Crossword.vue",
       "sourceRoot": "",
       "sourcesContent": [
-        "<template>\n  <div class=\"gameboard\" data-testid=\"gameboard\">\n    <div v-for=\"(letters, i) in lettersByRows\" :key=\"`r-${i}`\" data-testid=\"row\" class=\"row\">\n      <Cell v-for=\"(letter, j) in letters\"\n            :key=\"`r-${i}-c-${j}`\"\n            :letter=\"letter === '.' ? '' : letter\"\n            :number=\"numberForCell(i, j)\"\n      />\n    </div>\n  </div>\n</template>\n\n<script>\n  import Cell from './Cell'\n  import { chunk } from 'lodash'\n  export default {\n    components: { Cell },\n    props: {\n      crossword: { type: Object, required: true }\n    },\n    computed: {\n      numberForCell() {\n        return (rowIdx, cellIdx) => {\n          if (this.numbersByRows[rowIdx][cellIdx] > 0) {\n            return this.numbersByRows[rowIdx][cellIdx]\n          }\n\n          return ''\n        }\n      },\n      lettersByRows() {\n        return chunk(this.crossword.grid, this.crossword.size.cols)\n      },\n      numbersByRows() {\n        return chunk(this.crossword.gridnums, this.crossword.size.cols)\n      },\n    }\n  }\n</script>\n\n<style lang=\"scss\" scoped>\n  .gameboard {\n    display: grid;\n    position: relative;\n\n    border: 1px solid black;\n    overflow: scroll;\n  }\n\n  .row {\n    display: flex;\n    position: relative;\n    width: 100%;\n  }\n</style>\n"
+        "<template>\n  <div class=\"crossword\" data-testid=\"crossword\">\n    <div v-for=\"(letters, i) in lettersByRows\" :key=\"`r-${i}`\" data-testid=\"row\" class=\"row\">\n      <Cell v-for=\"(letter, j) in letters\"\n            :show-letter=\"solved\"\n            :key=\"`r-${i}-c-${j}`\"\n            :blocked-out=\"letter === '.'\"\n            :letter=\"letter\"\n            :number=\"numberForCell(i, j)\"\n      />\n    </div>\n  </div>\n</template>\n\n<script>\n  import Cell from './Cell'\n  import { chunk } from 'lodash'\n  export default {\n    components: { Cell },\n    props: {\n      solved: { type: Boolean, default: false },\n      crossword: { type: Object, required: true }\n    },\n    computed: {\n      numberForCell() {\n        return (rowIdx, cellIdx) => {\n          if (this.numbersByRows[rowIdx][cellIdx] > 0) {\n            return this.numbersByRows[rowIdx][cellIdx]\n          }\n\n          return ''\n        }\n      },\n      lettersByRows() {\n        return chunk(this.crossword.grid, this.crossword.size.cols)\n      },\n      numbersByRows() {\n        return chunk(this.crossword.gridnums, this.crossword.size.cols)\n      },\n    }\n  }\n</script>\n\n<style lang=\"scss\" scoped>\n  .crossword {\n    margin: 0 auto;\n    display: grid;\n    position: relative;\n    width: fit-content;\n\n    border: 1px solid black;\n    overflow: hidden;\n  }\n\n  .row {\n    display: flex;\n    position: relative;\n    width: fit-content;\n  }\n</style>\n"
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "2fe7752d3b988c5c41836e364d92a68db8d4d660"
+    "hash": "68c21b3b5be7a5804f1dae03fda076e6f9def1f1"
+  },
+  "/Users/jess/projects/personal/crossword/src/App.vue": {
+    "path": "/Users/jess/projects/personal/crossword/src/App.vue",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 22,
+          "column": 15
+        },
+        "end": {
+          "line": 22,
+          "column": 34
+        }
+      },
+      "1": {
+        "start": {
+          "line": 23,
+          "column": 19
+        },
+        "end": {
+          "line": 23,
+          "column": 52
+        }
+      },
+      "2": {
+        "start": {
+          "line": 23,
+          "column": 24
+        },
+        "end": {
+          "line": 23,
+          "column": 52
+        }
+      },
+      "3": {
+        "start": {
+          "line": 24,
+          "column": 16
+        },
+        "end": {
+          "line": 24,
+          "column": 71
+        }
+      },
+      "4": {
+        "start": {
+          "line": 24,
+          "column": 31
+        },
+        "end": {
+          "line": 24,
+          "column": 71
+        }
+      },
+      "5": {
+        "start": {
+          "line": 29,
+          "column": 17
+        },
+        "end": {
+          "line": 29,
+          "column": 51
+        }
+      },
+      "6": {
+        "start": {
+          "line": 30,
+          "column": 4
+        },
+        "end": {
+          "line": 34,
+          "column": 5
+        }
+      },
+      "7": {
+        "start": {
+          "line": 38,
+          "column": 6
+        },
+        "end": {
+          "line": 38,
+          "column": 36
+        }
+      },
+      "8": {
+        "start": {
+          "line": 41,
+          "column": 6
+        },
+        "end": {
+          "line": 41,
+          "column": 61
+        }
+      },
+      "9": {
+        "start": {
+          "line": 42,
+          "column": 6
+        },
+        "end": {
+          "line": 42,
+          "column": 27
+        }
+      },
+      "10": {
+        "start": {
+          "line": 45,
+          "column": 6
+        },
+        "end": {
+          "line": 45,
+          "column": 56
+        }
+      },
+      "11": {
+        "start": {
+          "line": 46,
+          "column": 6
+        },
+        "end": {
+          "line": 46,
+          "column": 27
+        }
+      },
+      "12": {
+        "start": {
+          "line": 49,
+          "column": 6
+        },
+        "end": {
+          "line": 52,
+          "column": 41
+        }
+      },
+      "13": {
+        "start": {
+          "line": 50,
+          "column": 26
+        },
+        "end": {
+          "line": 50,
+          "column": 41
+        }
+      },
+      "14": {
+        "start": {
+          "line": 51,
+          "column": 25
+        },
+        "end": {
+          "line": 51,
+          "column": 49
+        }
+      },
+      "15": {
+        "start": {
+          "line": 52,
+          "column": 22
+        },
+        "end": {
+          "line": 52,
+          "column": 40
+        }
+      },
+      "16": {
+        "start": {
+          "line": 57,
+          "column": 6
+        },
+        "end": {
+          "line": 57,
+          "column": 34
+        }
+      },
+      "17": {
+        "start": {
+          "line": 61,
+          "column": 4
+        },
+        "end": {
+          "line": 61,
+          "column": 25
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 23,
+            "column": 19
+          },
+          "end": {
+            "line": 23,
+            "column": 20
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 23,
+            "column": 24
+          },
+          "end": {
+            "line": 23,
+            "column": 52
+          }
+        },
+        "line": 23
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": {
+            "line": 24,
+            "column": 16
+          },
+          "end": {
+            "line": 24,
+            "column": 17
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 24,
+            "column": 31
+          },
+          "end": {
+            "line": 24,
+            "column": 71
+          }
+        },
+        "line": 24
+      },
+      "2": {
+        "name": "(anonymous_2)",
+        "decl": {
+          "start": {
+            "line": 28,
+            "column": 2
+          },
+          "end": {
+            "line": 28,
+            "column": 3
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 28,
+            "column": 9
+          },
+          "end": {
+            "line": 35,
+            "column": 3
+          }
+        },
+        "line": 28
+      },
+      "3": {
+        "name": "(anonymous_3)",
+        "decl": {
+          "start": {
+            "line": 37,
+            "column": 4
+          },
+          "end": {
+            "line": 37,
+            "column": 5
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 37,
+            "column": 12
+          },
+          "end": {
+            "line": 39,
+            "column": 5
+          }
+        },
+        "line": 37
+      },
+      "4": {
+        "name": "(anonymous_4)",
+        "decl": {
+          "start": {
+            "line": 40,
+            "column": 4
+          },
+          "end": {
+            "line": 40,
+            "column": 5
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 40,
+            "column": 21
+          },
+          "end": {
+            "line": 43,
+            "column": 5
+          }
+        },
+        "line": 40
+      },
+      "5": {
+        "name": "(anonymous_5)",
+        "decl": {
+          "start": {
+            "line": 44,
+            "column": 4
+          },
+          "end": {
+            "line": 44,
+            "column": 5
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 44,
+            "column": 17
+          },
+          "end": {
+            "line": 47,
+            "column": 5
+          }
+        },
+        "line": 44
+      },
+      "6": {
+        "name": "(anonymous_6)",
+        "decl": {
+          "start": {
+            "line": 48,
+            "column": 4
+          },
+          "end": {
+            "line": 48,
+            "column": 5
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 48,
+            "column": 37
+          },
+          "end": {
+            "line": 53,
+            "column": 5
+          }
+        },
+        "line": 48
+      },
+      "7": {
+        "name": "(anonymous_7)",
+        "decl": {
+          "start": {
+            "line": 50,
+            "column": 14
+          },
+          "end": {
+            "line": 50,
+            "column": 15
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 50,
+            "column": 26
+          },
+          "end": {
+            "line": 50,
+            "column": 41
+          }
+        },
+        "line": 50
+      },
+      "8": {
+        "name": "(anonymous_8)",
+        "decl": {
+          "start": {
+            "line": 51,
+            "column": 14
+          },
+          "end": {
+            "line": 51,
+            "column": 15
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 51,
+            "column": 25
+          },
+          "end": {
+            "line": 51,
+            "column": 49
+          }
+        },
+        "line": 51
+      },
+      "9": {
+        "name": "(anonymous_9)",
+        "decl": {
+          "start": {
+            "line": 52,
+            "column": 15
+          },
+          "end": {
+            "line": 52,
+            "column": 16
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 52,
+            "column": 22
+          },
+          "end": {
+            "line": 52,
+            "column": 40
+          }
+        },
+        "line": 52
+      },
+      "10": {
+        "name": "(anonymous_10)",
+        "decl": {
+          "start": {
+            "line": 56,
+            "column": 4
+          },
+          "end": {
+            "line": 56,
+            "column": 5
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 56,
+            "column": 18
+          },
+          "end": {
+            "line": 58,
+            "column": 5
+          }
+        },
+        "line": 56
+      },
+      "11": {
+        "name": "(anonymous_11)",
+        "decl": {
+          "start": {
+            "line": 60,
+            "column": 2
+          },
+          "end": {
+            "line": 60,
+            "column": 3
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 60,
+            "column": 18
+          },
+          "end": {
+            "line": 62,
+            "column": 3
+          }
+        },
+        "line": 60
+      }
+    },
+    "branchMap": {
+      "0": {
+        "loc": {
+          "start": {
+            "line": 48,
+            "column": 19
+          },
+          "end": {
+            "line": 48,
+            "column": 35
+          }
+        },
+        "type": "default-arg",
+        "locations": [
+          {
+            "start": {
+              "line": 48,
+              "column": 26
+            },
+            "end": {
+              "line": 48,
+              "column": 35
+            }
+          }
+        ],
+        "line": 48
+      }
+    },
+    "s": {
+      "0": 2,
+      "1": 2,
+      "2": 5,
+      "3": 2,
+      "4": 2,
+      "5": 3,
+      "6": 3,
+      "7": 0,
+      "8": 1,
+      "9": 1,
+      "10": 1,
+      "11": 1,
+      "12": 5,
+      "13": 5,
+      "14": 5,
+      "15": 0,
+      "16": 2,
+      "17": 3
+    },
+    "f": {
+      "0": 5,
+      "1": 2,
+      "2": 3,
+      "3": 0,
+      "4": 1,
+      "5": 1,
+      "6": 5,
+      "7": 5,
+      "8": 5,
+      "9": 0,
+      "10": 2,
+      "11": 3
+    },
+    "b": {
+      "0": [
+        5
+      ]
+    },
+    "inputSourceMap": {
+      "version": 3,
+      "sources": [
+        "/Users/jess/projects/personal/crossword/src/App.vue"
+      ],
+      "names": [],
+      "mappings": ";;;;;;;;;;;;;;;;;;AAkBA;;AAEA;AACA;AACA;AACA;;AAEA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA",
+      "file": "App.vue",
+      "sourceRoot": "",
+      "sourcesContent": [
+        "<template>\n  <div id=\"app\">\n    <h1>Component Testing with Crosswords</h1>\n    <form @submit.prevent=\"reset() && fetchCrossword()\" @reset=\"reset\">\n      <button type=\"submit\">New Crossword</button>\n      <button data-testid=\"reset\" type=\"reset\">Clear Crossword</button>\n    </form>\n    <div v-if=\"!crossword\">Loading</div>\n    <template v-else>\n      <h2 data-testid=\"crossword-title\" v-html=\"crossword.title\"></h2>\n      <button data-testid=\"prev\" @click=\"getPreviousDay\">Previous Day</button>\n      <button data-testid=\"next\" @click=\"getNextDay\">Next Day</button>\n      <Crossword :crossword=\"crossword\" :key=\"crosswordKey\" />\n    </template>\n  </div>\n</template>\n\n<script>\nimport Crossword from '@/components/Crossword'\n\n/** Date Utils **/\nconst oneDay = 1000 * 60 * 60 * 24\nconst formatDate = d => d.toISOString().slice(0, 10)\nconst addTime = (d, amount) => new Date(new Date(d).getTime() + amount)\n\nexport default {\n  name: 'App',\n  data() {\n    const date = formatDate(new Date('01/01/2012'))\n    return {\n      crossword: null,\n      crosswordKey: date,\n      date,\n    }\n  },\n  methods: {\n    reset() {\n      this.crosswordKey = Date.now()\n    },\n    getPreviousDay() {\n      this.date = formatDate(addTime(this.date, -1 * oneDay))\n      this.fetchCrossword()\n    },\n    getNextDay() {\n      this.date = formatDate(addTime(this.date, oneDay))\n      this.fetchCrossword()\n    },\n    fetchCrossword(date = this.date) {\n      return fetch(`https://raw.githubusercontent.com/doshea/nyt_crosswords/master/${date.replaceAll('-', '/')}.json`)\n        .then(response => response.json())\n        .then(payload => this.crossword = payload)\n        .catch(err => console.error(err))\n    }\n  },\n  watch: {\n    date(newDate) {\n      this.crosswordKey = newDate;\n    }\n  },\n  async created() {\n    this.fetchCrossword()\n  },\n  components: {\n    Crossword,\n  }\n}\n</script>\n\n<style lang=\"scss\">\n#app {\n  font-family: Avenir, Helvetica, Arial, sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  text-align: center;\n  color: #2c3e50;\n  margin-top: 60px;\n}\n</style>\n"
+      ]
+    },
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "810ef22bb9ee825a4a6a3cd13cf3014c09681e03"
   }
 }

@@ -23,3 +23,21 @@
 //
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('getCrossword', { prevSubject: 'element' }, (subject, options) => {
+  cy.get('input').then((inputs) => {
+    return Array.from(inputs.map((idx, el) => el.value)).join('')
+  })
+})
+Cypress.Commands.add("fillCrossword", { prevSubject: 'element' }, (subject, options) => {
+  if (options.crossword) {
+    cy.get('input').then((inputs) => {
+      const letters = options.partially ? options.crossword.grid.slice(0, 15) : options.crossword.grid
+      letters.forEach((letter, idx) => {
+        if (letter !== '.') {
+          cy.wrap(inputs[idx]).type(letter)
+        }
+      })
+    }).get(subject)
+  }
+})

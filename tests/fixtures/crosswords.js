@@ -1,4 +1,82 @@
 module.exports = {
+  previousCrossword: {
+    "acrossmap": null,
+    "admin": false,
+    "answers": {
+      "across": ["ANDES", "SNIDE", "SALE", "HIREE", "NORSE", "EMIT", "OVERTHEHILL", "LASH", "YEA", "SARIS", "EFILE", "AROUNDTHECORNER", "UPS", "LANE", "ASKTO", "SPLIT", "LARA", "BEYONDTHEHORIZON", "CALF", "ERITU", "EATEN", "SINO", "LMN", "UNDERTHECOUNTER", "LIRAS", "DOULA", "MEA", "TKOS", "SIGHTUNSEEN", "REPO", "ADEAR", "TORSO", "ASSN", "CARNE", "STYES"],
+      "down": ["AHOY", "NIVEA", "DREAR", "EER", "SETSUPON", "SNERD", "NOHIT", "IRISH", "DSL", "EEL", "SELFRELIANT", "AMAIN", "LISLE", "ETHER", "HANS", "EON", "OUTOFSEASON", "ELIHU", "CATO", "ABC", "SEA", "KYL", "STROH", "PHI", "LET", "AZT", "ROE", "ANN", "DENT", "REMNANTS", "IRS", "LULU", "ULTRA", "NIKES", "DROPS", "EDGER", "COHAN", "OUTRE", "EMERY", "REESE", "ANOS", "SAC", "IDA", "SOT"]
+    },
+    "author": "Paula Gamache",
+    "autowrap": null,
+    "bbars": null,
+    "circles": null,
+    "clues": {
+      "across": ["1. Peaks of Peru", "6. Not nice, as a comment", "11. \"Prices slashed!\" event", "15. One just put on the payroll", "16. Like Odin and Thor", "17. Give off", "18. Elderly, so to speak", "20. Mascara coats it", "21. Vote of support", "22. Bollywood wraps", "23. Submit a tax return via computer", "24. Soon to arrive", "28. FedEx competitor", "29. Bowler's assignment", "30. Send an invitation for", "33. Remaining 7 and 10 pins in bowling", "36. \"___ Croft: Tomb Raider\"", "40. Pulitzer-winning 1920 Eugene O'Neill play", "43. Baby bovine", "44. Verdi aria", "45. All gone from one's plate", "46. ___-Soviet relations", "48. Trio between K and O", "49. Secret or illegal", "57. Bygone Italian coins", "58. One providing nonmedical support for a woman in labor", "59. ___ culpa", "61. Some boxing results, for short", "62. Literal description of something that is 18-, 24-, 40- or 49-Across", "65. \"___ Man\" (Emilio Estevez film)", "66. \"Please be ___ and help me\"", "67. Human trunk", "68. The second \"A\" in N.C.A.A.: Abbr.", "69. Chili con ___", "70. Eyelid inflammations"],
+      "down": ["1. Cry to a matey", "2. Skin care brand", "3. Gloomy, to a bard", "4. Suffix with puppet", "5. Attacks vigorously", "6. Mortimer voiced by Edgar Bergen", "7. Like a pitcher's perfect game", "8. Notre Dame's Fighting ___", "9. Broadband inits.", "10. Reef wriggler", "11. Not needing anyone's help", "12. With full force", "13. Smooth cotton fabric", "14. Air up there", "19. Brinker on skates", "23. Forever and a day", "25. Like melons in spring, e.g.", "26. Statesman Root", "27. Ancient Rome's ___ the Elder", "30. Diane Sawyer's network", "31. Aegean, e.g.", "32. Arizona senator Jon", "33. Old Detroit brewery name", "34. ___ Beta Kappa", "35. Tennis do-over", "37. AIDS treatment drug", "38. ___ v. Wade", "39. ___ Arbor, Mich.", "41. Fender ding", "42. Fabric leftovers", "47. Form 1040 org.", "48. Humdinger", "49. The \"U\" in UHF", "50. Shoes with swooshes", "51. Plummets", "52. Lawn trimmer", "53. George M. ___, \"The Yankee Doodle Boy\" composer", "54. Unconventional and then some", "55. Manicurist's file", "56. Pee Wee of the 1940s-'50s Dodgers", "60. Years in Mexico", "62. Cul-de-___", "63. Its capital is Boise: Abbr.", "64. Boozehound"]
+    },
+    "code": null,
+    "copyright": "2012, The New York Times",
+    "date": "1\/2\/2012",
+    "dow": "Monday",
+    "downmap": null,
+    "editor": "Will Shortz",
+    "grid": ["A", "N", "D", "E", "S", ".", "S", "N", "I", "D", "E", ".", "S", "A", "L", "E", "H", "I", "R", "E", "E", ".", "N", "O", "R", "S", "E", ".", "E", "M", "I", "T", "O", "V", "E", "R", "T", "H", "E", "H", "I", "L", "L", ".", "L", "A", "S", "H", "Y", "E", "A", ".", "S", "A", "R", "I", "S", ".", ".", "E", "F", "I", "L", "E", ".", "A", "R", "O", "U", "N", "D", "T", "H", "E", "C", "O", "R", "N", "E", "R", ".", ".", ".", "U", "P", "S", ".", ".", ".", "L", "A", "N", "E", ".", ".", ".", "A", "S", "K", "T", "O", ".", "S", "P", "L", "I", "T", ".", "L", "A", "R", "A", "B", "E", "Y", "O", "N", "D", "T", "H", "E", "H", "O", "R", "I", "Z", "O", "N", "C", "A", "L", "F", ".", "E", "R", "I", "T", "U", ".", "E", "A", "T", "E", "N", ".", ".", ".", "S", "I", "N", "O", ".", ".", ".", "L", "M", "N", ".", ".", ".", "U", "N", "D", "E", "R", "T", "H", "E", "C", "O", "U", "N", "T", "E", "R", ".", "L", "I", "R", "A", "S", ".", ".", "D", "O", "U", "L", "A", ".", "M", "E", "A", "T", "K", "O", "S", ".", "S", "I", "G", "H", "T", "U", "N", "S", "E", "E", "N", "R", "E", "P", "O", ".", "A", "D", "E", "A", "R", ".", "T", "O", "R", "S", "O", "A", "S", "S", "N", ".", "C", "A", "R", "N", "E", ".", "S", "T", "Y", "E", "S"],
+    "gridnums": [1, 2, 3, 4, 5, 0, 6, 7, 8, 9, 10, 0, 11, 12, 13, 14, 15, 0, 0, 0, 0, 0, 16, 0, 0, 0, 0, 0, 17, 0, 0, 0, 18, 0, 0, 0, 0, 19, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 21, 0, 0, 0, 22, 0, 0, 0, 0, 0, 0, 23, 0, 0, 0, 0, 0, 24, 0, 25, 0, 0, 0, 0, 0, 26, 27, 0, 0, 0, 0, 0, 0, 0, 0, 28, 0, 0, 0, 0, 0, 29, 0, 0, 0, 0, 0, 0, 30, 31, 32, 0, 0, 0, 33, 34, 35, 0, 0, 0, 36, 37, 38, 39, 40, 0, 0, 0, 0, 41, 0, 0, 0, 0, 0, 42, 0, 0, 0, 0, 43, 0, 0, 0, 0, 44, 0, 0, 0, 0, 0, 45, 0, 0, 0, 0, 0, 0, 0, 46, 47, 0, 0, 0, 0, 0, 48, 0, 0, 0, 0, 0, 49, 50, 51, 0, 0, 0, 0, 52, 53, 54, 0, 0, 0, 55, 56, 0, 57, 0, 0, 0, 0, 0, 0, 58, 0, 0, 0, 0, 0, 59, 0, 60, 61, 0, 0, 0, 0, 62, 63, 0, 0, 0, 0, 0, 64, 0, 0, 0, 65, 0, 0, 0, 0, 66, 0, 0, 0, 0, 0, 67, 0, 0, 0, 0, 68, 0, 0, 0, 0, 69, 0, 0, 0, 0, 0, 70, 0, 0, 0, 0],
+    "hold": null,
+    "id": null,
+    "id2": null,
+    "interpretcolors": null,
+    "jnotes": null,
+    "key": null,
+    "mini": null,
+    "notepad": null,
+    "publisher": "The New York Times",
+    "rbars": null,
+    "shadecircles": null,
+    "size": { "cols": 16, "rows": 15 },
+    "title": "NY TIMES, MON, JAN 02, 2012",
+    "track": null,
+    "type": null
+  },
+  nextCrossword: {
+    "acrossmap": null,
+    "admin": false,
+    "answers": {
+      "across": ["SMOKE", "MISS", "OPUS", "CIVIL", "ITSABLAST", "ICONS", "NEWGUINEA", "ORIGAMI", "ADVERB", "NODS", "OMAR", "GELS", "OHI", "DENE", "REALESTATETAXES", "PRIVATEPRACTICE", "MADERESTITUTION", "STARTSSOMETHING", "STIR", "NSA", "SASH", "ESAU", "TBAR", "ONECAR", "SPAREME", "TOGAPARTY", "LATEX", "BRIDETOBE", "ATONE", "SESS", "STAT", "SENDS"],
+      "down": ["SCION", "MICRO", "OVOID", "KINGSOLVER", "ELSA", "MINIM", "ITE", "SSW", "SAGA", "OLIVE", "PANEL", "USERS", "STAB", "BUDGETCUTS", "MOISTEST", "ADAPTORS", "RETRIM", "HEARTSHAPE", "NEATENUP", "RPMS", "ERAT", "AIDA", "TESSIE", "ATTHATRATE", "XIII", "ECON", "SENG", "SNORE", "AEGIS", "SCADS", "ASYET", "BETON", "AMEND", "REXES", "OTBS", "RATS", "ALAS", "ROT", "TBA"]
+    },
+    "author": "Joe Krozel",
+    "autowrap": null,
+    "bbars": null,
+    "circles": null,
+    "clues": {
+      "across": ["1. Sign of engine trouble", "6. What a 61-Across will be called for only a little while longer", "10. One on a Liszt list", "14. Like some suits", "15. \"This shindig rocks!\"", "17. Computer screenful", "18. Part of Melanesia", "19. Subject for a folder", "21. Always or sometimes, say", "22. Approvals", "23. \"The thoughtful soul to solitude retires\" poet", "26. Gets set", "27. \"___ dunno ...\"", "29. Sandy tract by the sea, to a Brit", "31. They're often placed on parcels", "39. Lawyer's setup?", "40. Righted wrongs", "41. Picks a fight", "42. Rustle", "43. Wiretapping grp.", "44. Accessory that may have a state name on it", "47. Old Testament \"man of the field\"", "49. Lift, of a sort", "53. Like many garages", "55. Excuse-interrupting comment", "57. Occasion to put on sheets", "60. Primer option", "61. Shower head?", "62. Right wrongs", "63. Psychiatrist's appt.", "64. Turnovers, e.g.", "65. Posts"],
+      "down": ["1. Offshoot", "2. Start that conveys very little?", "3. Like prickly pears", "4. Novelist whose character Adah speaks in palindromes", "5. Four-footed orphan of literature", "6. Half note, in Britain", "7. -nik kin", "8. Yemen-to-Zimbabwe dir.", "9. Continuing drama", "10. Food item often cut into rings", "11. Setting for instruments", "12. ___ manual", "13. Skewer", "16. Belt tightenings", "20. Like the best chicken or turkey, say", "24. Electrical accessories", "25. Crop further", "28. Feature of many a box of chocolates", "30. Unclutter", "31. CD rate?", "32. \"Hoc ___ in votis\"", "33. Slave singing several solos", "34. Red Sox anthem", "35. \"If things were to continue thus ...\"", "36. Number of one of the Olympics canceled due to W.W. II", "37. Study of some bubbles?: Abbr.", "38. Hong Kong's Hang ___ index", "44. Large bore", "45. Umbrella", "46. Oodles", "48. Heretofore", "50. Back with bread", "51. Improve", "52. Curly-furred cats", "53. Parlors with TV screens: Abbr.", "54. Experiment runners?", "56. \"Oh, cruel world ...\"", "58. Bushwa", "59. Sched. letters"]
+    },
+    "code": null,
+    "copyright": "2011, The New York Times",
+    "date": "12\/31\/2011",
+    "dow": "Saturday",
+    "downmap": null,
+    "editor": "Will Shortz",
+    "grid": ["S", "M", "O", "K", "E", ".", "M", "I", "S", "S", ".", "O", "P", "U", "S", "C", "I", "V", "I", "L", ".", "I", "T", "S", "A", "B", "L", "A", "S", "T", "I", "C", "O", "N", "S", ".", "N", "E", "W", "G", "U", "I", "N", "E", "A", "O", "R", "I", "G", "A", "M", "I", ".", ".", "A", "D", "V", "E", "R", "B", "N", "O", "D", "S", ".", "O", "M", "A", "R", ".", "G", "E", "L", "S", ".", ".", ".", ".", "O", "H", "I", ".", "D", "E", "N", "E", ".", ".", ".", ".", "R", "E", "A", "L", "E", "S", "T", "A", "T", "E", "T", "A", "X", "E", "S", "P", "R", "I", "V", "A", "T", "E", "P", "R", "A", "C", "T", "I", "C", "E", "M", "A", "D", "E", "R", "E", "S", "T", "I", "T", "U", "T", "I", "O", "N", "S", "T", "A", "R", "T", "S", "S", "O", "M", "E", "T", "H", "I", "N", "G", ".", ".", ".", ".", "S", "T", "I", "R", ".", "N", "S", "A", ".", ".", ".", ".", "S", "A", "S", "H", ".", "E", "S", "A", "U", ".", "T", "B", "A", "R", "O", "N", "E", "C", "A", "R", ".", ".", "S", "P", "A", "R", "E", "M", "E", "T", "O", "G", "A", "P", "A", "R", "T", "Y", ".", "L", "A", "T", "E", "X", "B", "R", "I", "D", "E", "T", "O", "B", "E", ".", "A", "T", "O", "N", "E", "S", "E", "S", "S", ".", "S", "T", "A", "T", ".", "S", "E", "N", "D", "S"],
+    "gridnums": [1, 2, 3, 4, 5, 0, 6, 7, 8, 9, 0, 10, 11, 12, 13, 14, 0, 0, 0, 0, 0, 15, 0, 0, 0, 16, 0, 0, 0, 0, 17, 0, 0, 0, 0, 0, 18, 0, 0, 0, 0, 0, 0, 0, 0, 19, 0, 0, 0, 0, 20, 0, 0, 0, 21, 0, 0, 0, 0, 0, 22, 0, 0, 0, 0, 23, 0, 24, 25, 0, 26, 0, 0, 0, 0, 0, 0, 0, 27, 28, 0, 0, 29, 0, 30, 0, 0, 0, 0, 0, 31, 32, 33, 0, 0, 0, 34, 0, 0, 0, 0, 35, 36, 37, 38, 39, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 41, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 42, 0, 0, 0, 0, 43, 0, 0, 0, 0, 0, 0, 44, 45, 46, 0, 0, 47, 0, 48, 0, 0, 49, 50, 51, 52, 53, 0, 0, 0, 0, 54, 0, 0, 55, 0, 56, 0, 0, 0, 0, 57, 0, 0, 0, 0, 0, 58, 59, 0, 0, 60, 0, 0, 0, 0, 61, 0, 0, 0, 0, 0, 0, 0, 0, 0, 62, 0, 0, 0, 0, 63, 0, 0, 0, 0, 64, 0, 0, 0, 0, 65, 0, 0, 0, 0],
+    "hold": null,
+    "id": null,
+    "id2": null,
+    "interpretcolors": null,
+    "jnotes": "Mr. Krozel made two versions of this puzzle. The companion triple-stack grid contains 3\/4 of the <em>same<\/em> quad-stack plus black squares in all the same places. <a href=\"http:\/\/www.xwordinfo.com\/images\/grids\/JKCompare.gif\">You can see the two grids together here<\/a>.",
+    "key": null,
+    "mini": null,
+    "notepad": null,
+    "publisher": "The New York Times",
+    "rbars": null,
+    "shadecircles": null,
+    "size": { "cols": 15, "rows": 16 },
+    "title": "NY TIMES, SAT, DEC 31, 2011",
+    "track": null,
+    "type": null
+  },
   crossword: {
     "acrossmap": null,
     "admin": false,
@@ -78,8 +156,7 @@ module.exports = {
       "track": null,
       "type": null
     },
-    helloWorld:
-    {
+  helloWorld: {
       "acrossmap": null,
       "admin": false,
       "answers": {
