@@ -129,6 +129,7 @@
 
     .number {
       position: absolute;
+      pointer-events: none;
 
       display: inline-block;
 
