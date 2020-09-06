@@ -4,6 +4,7 @@
       <Cell v-for="(letter, j) in letters"
             :show-letter="solved"
             :key="`r-${i}-c-${j}`"
+            :ref="`r-${i}-c-${j}`"
             :blocked-out="letter === '.'"
             :letter="letter"
             :number="numberForCell(i, j)"
@@ -20,6 +21,16 @@
     props: {
       solved: { type: Boolean, default: false },
       crossword: { type: Object, required: true }
+    },
+    methods: {
+      focus(clueNumber) {
+        const rowIdx = this.numbersByRows.findIndex(row => row.indexOf(clueNumber) !== -1)
+
+        console.log('rowIdx', rowIdx, this.numbersByRows.findIndex)
+        debugger;
+        const cellIdx = this.numbersByRows[rowIdx].indexOf(clueNumber)
+        this.$refs[`r-${rowIdx}-c-${cellIdx}`][0].focus()
+      }
     },
     computed: {
       numberForCell() {

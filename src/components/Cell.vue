@@ -5,6 +5,7 @@
            :value="showLetter ? letter : value"
            :disabled="showLetter || blockedOut"
            autocomplete="false"
+           ref="input"
            @beforeinput.prevent="filterManyLetters"
            @input="filterManyLetters"
     >
@@ -35,6 +36,9 @@
         }
         this.value = e.data[0]
       },
+      focus() {
+        this.$refs.input.focus()
+      }
     },
     computed: {
       classes() {

@@ -24,11 +24,11 @@
       </nav>
       <main>
         <div v-if="!crossword">Loading</div>
-        <Crossword class="crossword" :crossword="crossword" :solved="solved" :key="crosswordKey" v-show="showCrossword"/>
+        <Crossword class="crossword" :crossword="crossword" :solved="solved" :key="crosswordKey" v-show="showCrossword" ref="crossword"/>
         <ul>
           <li v-for="clue in clues">
             <h3 v-if="clue === 'Across' || clue === 'Down'">{{ clue }}</h3>
-            <template v-else>{{ clue }}</template>
+            <span v-else @click="jumpToCell(clue)">{{ clue }}</span>
           </li>
         </ul>
       </main>
@@ -54,7 +54,7 @@ export default {
       crosswordKey: date,
       date,
       solved: false,
-      showCrossword: true,
+      showCrossword: true
     }
   },
   computed: {
@@ -63,8 +63,13 @@ export default {
     }
   },
   methods: {
+    jumpToCell(clue) {
+      const clueNumber = parseInt(clue.match(/(\d+)\w?/)[0], 10)
+      this.$refs.crossword.focus(clueNumber)
+      this.$refs.crossword.$el.scrollIntoView()
+    },
     toggleCrosswordSize(size) {
-      const getProp = () => document.documentElement.style.getPropertyValue('--scale')
+      // const getProp = () => document.documentElement.style.getPropertyValue('--scale')
       const setProp = (val) => document.documentElement.style.setProperty('--scale', val)
       setProp(size)
     },
@@ -131,6 +136,27 @@ export default {
   main {
     margin: 4.17rem auto;
     width: 1200px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .crossword.crossword {
+      float: unset;
+      position: sticky;
+      top: 0;
+      margin: 0;
+      overflow: auto;
+    }
+
+    ul {
+      height: 120vh;
+      max-width: 120vw;
+      margin: 0;
+      padding: 1rem 0;
+    }
+
+    :root {
+      --scale: 0.5;
+    }
   }
 
   .crossword {
