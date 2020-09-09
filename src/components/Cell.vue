@@ -24,10 +24,13 @@
       blockedOut: { type: Boolean, default: false },
       letter: { type: String, default: '' },
       number: { type: [String, Number], optional: true , default: ''},
+      initialValue: { type: String, required: false, default: '' },
     },
-    data: () => ({
-      value: ''
-    }),
+    data() {
+      return {
+        value: this.initialValue
+      }
+    },
     methods: {
       filterManyLetters(e) {
         if (e.data == null) {
@@ -49,7 +52,7 @@
       value(newValue) {
         this.$emit('input', newValue)
       }
-    }
+    },
   }
 </script>
 
@@ -141,4 +144,21 @@
       color: #666;
     }
   }
+</style>
+
+<style lang="scss" scoped>
+  @media print {
+    // Cell Overrides
+    .cell {
+      border: 1px solid black;
+      box-shadow: none;
+      background: white;
+      -webkit-print-color-adjust: exact !important;
+
+      span:first-of-type {
+        display: none;
+      }
+    }
+  }
+
 </style>

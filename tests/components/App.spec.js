@@ -13,7 +13,7 @@ describe('App', () => {
     cy.get('[data-testid=reset').as('reset')
   })
 
-  it.only('renders the crossword puzzle on load', function() {
+  it('renders the crossword puzzle on load', function() {
     expect(cy.get('@crossword')).to.exist
   })
 

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1599593280575" clover="3.2.0">
+  <project timestamp="1599593280575" name="All files">
+    <metrics statements="40" coveredstatements="28" conditionals="7" coveredconditionals="6" methods="27" coveredmethods="20" elements="74" coveredelements="54" complexity="0" loc="40" ncloc="40" packages="2" files="3" classes="3"/>
+    <package name="src">
+      <metrics statements="23" coveredstatements="17" conditionals="1" coveredconditionals="1" methods="16" coveredmethods="12"/>
+      <file name="App.vue" path="/Users/jess/projects/personal/crossword/src/App.vue">
+        <metrics statements="23" coveredstatements="17" conditionals="1" coveredconditionals="1" methods="16" coveredmethods="12"/>
+        <line num="44" count="5" type="stmt"/>
+        <line num="45" count="33" type="stmt"/>
+        <line num="46" count="19" type="stmt"/>
+        <line num="51" count="14" type="stmt"/>
+        <line num="52" count="14" type="stmt"/>
+        <line num="62" count="28" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="77" count="2" type="stmt"/>
+        <line num="80" count="7" type="stmt"/>
+        <line num="81" count="7" type="stmt"/>
+        <line num="84" count="7" type="stmt"/>
+        <line num="85" count="7" type="stmt"/>
+        <line num="88" count="28" type="stmt"/>
+        <line num="89" count="28" type="stmt"/>
+        <line num="90" count="28" type="stmt"/>
+        <line num="91" count="0" type="stmt"/>
+        <line num="96" count="14" type="stmt"/>
+        <line num="97" count="14" type="stmt"/>
+        <line num="101" count="14" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components">
+      <metrics statements="17" coveredstatements="11" conditionals="6" coveredconditionals="5" methods="11" coveredmethods="8"/>
+      <file name="Cell.vue" path="/Users/jess/projects/personal/crossword/src/components/Cell.vue">
+        <metrics statements="8" coveredstatements="5" conditionals="4" coveredconditionals="3" methods="5" coveredmethods="4"/>
+        <line num="28" count="13230" type="stmt"/>
+        <line num="33" count="24" type="cond" truecount="1" falsecount="1"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="37" count="24" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="45" count="14126" type="cond" truecount="2" falsecount="0"/>
+        <line num="50" count="24" type="stmt"/>
+      </file>
+      <file name="Crossword.vue" path="/Users/jess/projects/personal/crossword/src/components/Crossword.vue">
+        <metrics statements="9" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="6" coveredmethods="4"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="34" count="30" type="stmt"/>
+        <line num="35" count="16590" type="cond" truecount="2" falsecount="0"/>
+        <line num="36" count="4510" type="stmt"/>
+        <line num="39" count="12080" type="stmt"/>
+        <line num="43" count="44" type="stmt"/>
+        <line num="46" count="44" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

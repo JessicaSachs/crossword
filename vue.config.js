@@ -6,6 +6,7 @@ module.exports = {
       title: 'Crossword Game'
     }
   },
+  transpileDependencies: ['vuex-persist'],
   publicPath: process.env.NODE_ENV === 'production'
     ? '/crossword/'
     : '/'

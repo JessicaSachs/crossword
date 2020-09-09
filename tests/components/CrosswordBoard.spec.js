@@ -1,19 +1,19 @@
 /// <reference types="cypress" />
-import Crossword from '@/components/Crossword'
+import CrosswordBoard from '@/components/CrosswordBoard'
 import { mount } from 'cypress-vue-unit-test'
 import {
   helloWorld as crossword,
   crossword as bigCrossword } from '../fixtures/crosswords'
 
-describe('Crossword', () => {
+describe('CrosswordBoard', () => {
   it('requires a crossword', () => {
-    expect(() => mount(Crossword)).to.throw
+    expect(() => mount(CrosswordBoard)).to.throw
   })
 
   describe('smaller board', () => {
     describe('successfully renders', () => {
       beforeEach(() => {
-        mount(Crossword, {
+        mount(CrosswordBoard, {
           propsData: {
             crossword,
             solved: true
@@ -63,7 +63,7 @@ describe('Crossword', () => {
   describe('larger board', () => {
     describe('solved', () => {
       it('renders successfully', () => {
-        mount(Crossword, {
+        mount(CrosswordBoard, {
           propsData: { crossword: bigCrossword, solved: true }
         })
 
@@ -73,7 +73,7 @@ describe('Crossword', () => {
 
     describe('unsolved', () => {
       it('renders successfully', () => {
-        mount(Crossword, {
+        mount(CrosswordBoard, {
           propsData: { crossword: bigCrossword, solved: false }
         })
 

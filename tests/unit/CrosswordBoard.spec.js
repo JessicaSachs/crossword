@@ -1,18 +1,18 @@
 import { mount } from '@vue/test-utils'
-import Crossword from '@/components/Crossword'
+import CrosswordBoard from '@/components/CrosswordBoard'
 import {
   helloWorld as crossword,
   crossword as bigCrossword } from '../fixtures/crosswords'
 
 describe('Crossword', () => {
   it('requires a crossword', () => {
-    expect(() => mount(Crossword)).toThrow()
+    expect(() => mount(CrosswordBoard)).toThrow()
   })
 
   describe('successfully renders', () => {
     let wrapper;
     beforeEach(async () => {
-      wrapper = mount(Crossword, {
+      wrapper = mount(CrosswordBoard, {
         propsData: {
           crossword,
           solved: true
@@ -63,7 +63,7 @@ describe('Crossword', () => {
   describe('larger board', () => {
     describe('solved', () => {
       it('renders successfully', async () => {
-        const wrapper = await mount(Crossword, {
+        const wrapper = await mount(CrosswordBoard, {
           propsData: { crossword: bigCrossword, solved: true }
         })
 
@@ -75,7 +75,7 @@ describe('Crossword', () => {
 
     describe('unsolved', () => {
       it('renders successfully', async() => {
-        const wrapper = mount(Crossword, {
+        const wrapper = mount(CrosswordBoard, {
           propsData: { crossword: bigCrossword, solved: false }
         })
         await wrapper.vm.$nextTick()

@@ -1,68 +1,80 @@
 <template>
-  <div class="crossword" data-testid="crossword">
-    <div v-for="(letters, i) in lettersByRows" :key="`r-${i}`" data-testid="row" class="row">
-      <Cell v-for="(letter, j) in letters"
-            :show-letter="solved"
-            :key="`r-${i}-c-${j}`"
-            :ref="`r-${i}-c-${j}`"
-            :blocked-out="letter === '.'"
-            :letter="letter"
-            :number="numberForCell(i, j)"
+  <div v-show="showCrossword" class="crossword-container">
+    <template v-if="crossword">
+      <header>
+      <router-link :to="yesterday"><BaseButton data-testid="prev">👈👈 Prev</BaseButton></router-link>
+      <h3 v-html="title"></h3>
+      <router-link :to="tomorrow"><BaseButton data-testid="next">Next 👉👉</BaseButton></router-link>
+      </header>
+
+      <CrosswordBoard
+        ref="board"
+        :key="crossword.id"
+        :crossword="crossword"
+        :solved="solved"
+        :initial-board="board"
+        @update-board="setBoardState"
       />
-    </div>
+
+      <p>By {{ crossword.author }}, {{ crossword.date }}</p>
+    </template>
   </div>
 </template>
 
 <script>
-  import Cell from './Cell'
-  import { chunk } from 'lodash'
+  import CrosswordBoard from '@/components/CrosswordBoard'
+  import Clues from '@/components/Clues'
+  import BaseButton from '@/components/BaseButton'
+  import { mapState, mapActions, mapGetters } from 'vuex'
+
   export default {
-    components: { Cell },
-    props: {
-      solved: { type: Boolean, default: false },
-      crossword: { type: Object, required: true }
+    components: { CrosswordBoard, Clues, BaseButton },
+    computed: {
+      title() {
+        const date = new Date(this.crossword.date)
+
+        const dateTimeFormat = new Intl.DateTimeFormat('en', {
+          year: 'numeric', month: 'short', day: 'numeric', weekday: 'short'
+        })
+
+        return this.crossword.isSunday ?
+          `${this.crossword.title}, ${dateTimeFormat.format(date)}` :
+          this.crossword.title
+      },
+      ...mapState(['crossword', 'showCrossword', 'solved', 'board']),
+      ...mapGetters(['yesterday', 'tomorrow'])
     },
     methods: {
-      focus(clueNumber) {
-        const rowIdx = this.numbersByRows.findIndex(row => row.indexOf(clueNumber) !== -1)
-        const cellIdx = this.numbersByRows[rowIdx].indexOf(clueNumber)
-        this.$refs[`r-${rowIdx}-c-${cellIdx}`][0].focus()
-      }
+      solve(clue) {
+        this.$refs.board.toggleShowClueNumber(clue)
+      },
+      focus(clue) {
+        this.$refs.board.focus(clue)
+      },
+      ...mapActions(['setBoardState'])
     },
-    computed: {
-      numberForCell() {
-        return (rowIdx, cellIdx) => {
-          if (this.numbersByRows[rowIdx][cellIdx] > 0) {
-            return this.numbersByRows[rowIdx][cellIdx]
-          }
-
-          return ''
-        }
-      },
-      lettersByRows() {
-        return chunk(this.crossword.grid, this.crossword.size.cols)
-      },
-      numbersByRows() {
-        return chunk(this.crossword.gridnums, this.crossword.size.cols)
-      },
-    }
   }
 </script>
 
-<style lang="scss" scoped>
-  .crossword {
-    margin: 0 auto;
-    display: grid;
-    position: relative;
-    width: fit-content;
-
-    border: 1px solid black;
-    overflow: hidden;
+<style scoped>
+  p {
+    text-align: center;
   }
 
-  .row {
+  h2 {
+    text-transform: uppercase;
+  }
+
+  header {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .crossword-container {
     display: flex;
-    position: relative;
-    width: fit-content;
+    flex-direction: column;
+    justify-content: space-evenly;
+    grid-gap: 3rem;
   }
 </style>
