@@ -34,7 +34,7 @@ $cellSize: calc(2rem * var(--scale, 1));
   min-width: $cellSize;
   min-height: $cellSize;
 
-  width: 100%;
+  width: min-content;
 
   font-size: 0.8rem;
 

@@ -93,10 +93,12 @@ export default new Vuex.Store({
       if (!date) date = state.date
       if (typeof date !== 'string') date = formatDate(date)
 
-      return fetch(crosswordUrl(date))
-        .then(response => {
-          if (response.status > 300) {
-            return Promise.reject(response)
+      return new Promise((resolve, reject) => {
+        setTimeout(() => fetch(crosswordUrl(date)).then(response => {
+          if (!response.ok) {
+            throw new Error(
+              `(${response.status}) ${response.statusText} fetching ${response.url}`
+            )
           }
           return response
         }).then(response => response.json())
@@ -104,8 +106,9 @@ export default new Vuex.Store({
           commit('setCrossword', createCrossword(payload))
           commit('setDate', date)
 
-          return payload
-        })
+          resolve(payload)
+        }).catch((err) => reject(err)), 1000)
+      })
     }
   },
 })

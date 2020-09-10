@@ -81,8 +81,8 @@
     color: deeppink;
     @media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
       &:before {
-        width: fill-available !important;
-        height: fill-available !important;
+        width: $cellSize;
+        height: $cellSize;
       }
     }
 
@@ -92,14 +92,12 @@
       left: 0;
       top: 0;
 
-      z-index: 1;
+      z-index: 0;
 
-
-      width: calc(#{$cellSize} + 0.12rem);
-      height: calc(#{$cellSize} + 0.12rem);
+      width: -webkit-fill-available;
+      height: -webkit-fill-available;
 
       box-shadow: 0 0 0 3px deeppink inset;
-
     }
   }
 </style>

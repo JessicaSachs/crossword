@@ -12,7 +12,6 @@
 
 <script>
   import crosswords from '@/../tests/fixtures/crosswords'
-
   export default {
     computed: {
       crossword() { return crosswords.fifteenByFifteen }
