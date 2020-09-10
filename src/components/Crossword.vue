@@ -1,5 +1,5 @@
 <template>
-  <div v-show="showCrossword" class="crossword-container">
+  <div class="crossword-container">
     <template v-if="crossword">
       <header>
       <router-link :to="yesterday"><BaseButton data-testid="prev">👈👈 Prev</BaseButton></router-link>
@@ -41,7 +41,7 @@
           `${this.crossword.title}, ${dateTimeFormat.format(date)}` :
           this.crossword.title
       },
-      ...mapState(['crossword', 'showCrossword', 'solved', 'board']),
+      ...mapState(['crossword', 'solved', 'board']),
       ...mapGetters(['yesterday', 'tomorrow'])
     },
     methods: {
