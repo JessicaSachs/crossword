@@ -1,5 +1,5 @@
 <template>
-  <div class="crossword" data-testid="crossword">
+  <div class="crossword-board" data-testid="crossword">
     <div v-for="(row, i) in crossword.rows" :key="`r-${i}`"
          data-testid="row" class="crossword-row">
       <Cell v-for="({ letter, number, index, showLetter, blockedOut }, j) in row"
@@ -11,6 +11,7 @@
             :letter="letter"
             :number="number"
             v-model="boardState[i][j]"
+
       />
     </div>
   </div>
@@ -18,7 +19,6 @@
 
 <script>
   import Cell from './Cell'
-  import { chunk } from 'lodash'
 
   const makeBoardState = (crossword, initialBoard = []) => {
     const state = []
@@ -45,7 +45,9 @@
       initialBoard: { type: Array, required: false, default: () => ([]) },
     },
     data() {
-      return { boardState: makeBoardState(this.crossword, this.initialBoard) }
+      return {
+        boardState: makeBoardState(this.crossword, this.initialBoard)
+      }
     },
     methods: {
       focus(clue) {
@@ -64,20 +66,4 @@
   }
 </script>
 
-<style lang="scss" scoped>
-  .crossword {
-    margin: 0 auto;
-    display: grid;
-    position: relative;
-    width: fit-content;
-
-    border: 1px solid black;
-    overflow: hidden;
-  }
-
-  .crossword-row {
-    display: flex;
-    position: relative;
-    width: fit-content;
-  }
-</style>
+<style lang="scss" scoped src="./crossword.scss"></style>

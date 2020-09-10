@@ -1,9 +1,8 @@
 /// <reference types="cypress" />
 import CrosswordBoard from '@/components/CrosswordBoard'
 import { mount } from 'cypress-vue-unit-test'
-import {
-  helloWorld as crossword,
-  crossword as bigCrossword } from '../fixtures/crosswords'
+import crosswords from '../fixtures/crosswords'
+const { crossword: bigCrossword, helloWorld: crossword } = crosswords
 
 describe('CrosswordBoard', () => {
   it('requires a crossword', () => {
@@ -18,11 +17,11 @@ describe('CrosswordBoard', () => {
             crossword,
             solved: true
           }
+        }).then(() => {
+          cy.get('[data-testid=crossword]').as('board')
+          cy.get('[data-testid=crossword] [data-testid=cell]').as('cells')
+          cy.get('[data-testid=crossword] [data-testid=row]').as('rows')
         })
-
-        cy.get('[data-testid=crossword]').as('board')
-        cy.get('[data-testid=crossword] [data-testid=cell]').as('cells')
-        cy.get('[data-testid=crossword] [data-testid=row]').as('rows')
       })
 
       it('has a crossword puzzle', () => {

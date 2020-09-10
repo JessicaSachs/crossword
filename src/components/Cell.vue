@@ -57,7 +57,6 @@
 </script>
 
 <style lang="scss" scoped>
-
   $cellSize: calc(2rem * var(--scale, 1));
 
   input {
@@ -103,48 +102,9 @@
 
     }
   }
-
-  .cell {
-    /*box-shadow: 0 0 0 1px black;*/
-    border: 1px solid black;
-
-    text-transform: uppercase;
-    position: relative;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    min-width: $cellSize;
-    min-height: $cellSize;
-
-    width: 100%;
-
-    font-size: 0.8rem;
-
-    vertical-align: top;
-
-    &.blocked-out {
-      background: black;
-      color: transparent;
-      pointer-events: none;
-    }
-
-    .number {
-      position: absolute;
-      pointer-events: none;
-
-      display: inline-block;
-
-      font-size: .6rem;
-
-      top: .2rem;
-      right: .2rem;
-
-      color: #666;
-    }
-  }
 </style>
+
+<style lang="scss" src="./crossword.scss"></style>
 
 <style lang="scss" scoped>
   @media print {

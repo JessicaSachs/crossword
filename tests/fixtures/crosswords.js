@@ -1,4 +1,7 @@
-module.exports = {
+import { createCrossword } from '@/utils'
+import { mapValues } from 'lodash'
+
+export default mapValues({
   previousCrossword: {
     "acrossmap": null,
     "admin": false,
@@ -207,7 +210,15 @@ module.exports = {
     },
   oneByTwo: {
     size: { cols: 1, rows: 2 },
-    gridnums: [1, 1],
-    grid: ['A', 'N']
+    gridnums: [1, 0],
+    grid: ['A', 'N'],
+    answers: {
+      across: ['AN'],
+      down: [],
+    },
+    clues: {
+      across: ['1. ___ article of speech'],
+      down: []
+    }
   }
-}
+}, createCrossword)

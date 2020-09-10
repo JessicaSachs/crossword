@@ -7,6 +7,7 @@ const vuexPersist = new VuexPersistence({ storage: window.localStorage })
 
 import { formatDate, addTime, oneDay, isSunday } from '@/utils/date'
 import { hash } from '@/utils'
+import { createCrossword } from '@/utils'
 import { range } from 'lodash'
 
 window.range = range;
@@ -15,18 +16,6 @@ Vue.use(Vuex)
 
 const cleanDate = date => date.replace(/-+/g, '/')
 const crosswordUrl = date => `https://raw.githubusercontent.com/doshea/nyt_crosswords/master/${cleanDate(date)}.json`
-const matchNumber = text => parseInt(text.match(/(\d+)\w?/)[0], 10)
-
-const makeClue = (text, idx, direction, { answers }) => {
-  const answer = answers[direction][idx]
-  return {
-    direction,
-    text,
-    number: matchNumber(text),
-    answer,
-    indices: []
-  }
-}
 
 const makeState = () => {
   const startDate = formatDate(new Date('2/14/2012'))
@@ -112,59 +101,7 @@ export default new Vuex.Store({
           return response
         }).then(response => response.json())
         .then(payload => {
-          payload.clues = {
-            across: payload.clues.across.map((c, idx) => makeClue(c, idx, 'across', payload)),
-            down: payload.clues.down.map((c, idx) => makeClue(c, idx, 'down', payload)),
-          }
-
-          const newRowLimit = payload.size.cols
-          const rows = []
-          let currentRow = []
-          let rowIdx = 0
-          let colIdx = 0
-
-          for (let i = 0; i < payload.grid.length; i++) {
-            colIdx++
-
-            const letter = payload.grid[i]
-            const number = payload.gridnums[i]
-
-            const cell = {
-              letter: letter || '',
-              number: number || '',
-              blockedOut: letter === '.',
-              index: i,
-              rowIdx,
-              colIdx,
-              showLetter: false
-            }
-
-            currentRow.push(cell)
-
-            if (currentRow.length === newRowLimit) {
-              rows.push(Array.from(currentRow))
-              colIdx = -1
-              rowIdx++
-              currentRow = []
-            }
-          }
-
-          payload.rows = rows
-          payload.cells = []
-
-          for (let i = 0; i < payload.rows.length; i++) {
-            for (let j = 0; j < payload.rows[i].length; j++) {
-
-              const cell = payload.rows[i][j]
-              payload.cells.push(cell)
-            }
-          }
-
-          payload.isSunday = isSunday(payload.date)
-          payload.id = date
-
-
-          commit('setCrossword', payload)
+          commit('setCrossword', createCrossword(payload))
           commit('setDate', date)
 
           return payload

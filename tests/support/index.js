@@ -24,11 +24,8 @@ require('./commands')
 
 require('@/styles/index.scss')
 
-//
-// beforeEach(() => {
-//   cy.window().then((win) => {
-//     const devtoolsScript = win.document.createElement('script')
-//     devtoolsScript.src = 'http://localhost:8098'
-//     win.document.body.appendChild(devtoolsScript)
-//   })
-// })
+if (window.Cypress) {
+  // send any errors caught by the Vue handler
+  // to the Cypress top level error handler to fail the test
+  // https://github.com/cypress-io/cypress/issues/7910
+}

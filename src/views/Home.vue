@@ -2,61 +2,86 @@
   <div class="home">
     <template v-if="crossword">
       <Clues v-for="(clues, direction) in crossword.clues"
-              :key="direction"
-              :class="direction"
-              class="clues"
-              :clues="clues"
+             :key="direction"
+             :class="direction"
+             class="clues"
+             :clues="clues"
              @clue-selected="focusClue"
       >
       </Clues>
       <section class="crossword" :class="classes">
         <h1>Component Testing with Crosswords</h1>
-        <Crossword ref="crossword" />
+
+        <p v-if="error">
+
+          Houston, we have a problem:
+          <pre><code>{{ error }}</code></pre>
+
+        </p>
+
+        <SkeletonLoader v-else-if="loading" type="crossword"/>
+
+        <Crossword v-else="loading" ref="crossword"/>
       </section>
     </template>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import Clues from '@/components/Clues'
-import Crossword from '@/components/Crossword'
-import { mapState, mapActions } from 'vuex'
+  import Clues from '@/components/Clues'
+  import Crossword from '@/components/Crossword'
+  import SkeletonLoader from '@/components/CrosswordSkeleton'
+  import { mapState, mapActions } from 'vuex'
 
-export default {
-  name: 'Home',
-  components: {
-    Clues,
-    Crossword
-  },
-  methods: {
-    focusClue(clue) {
-      this.$refs.crossword.focus(clue)
+  export default {
+    name: 'Home',
+    components: {
+      Clues,
+      Crossword
     },
-    loadCrosswordOrFallback() {
-      const { date } = this.$router.currentRoute.params
-      this.fetchCrossword(date)
-        .catch((err) => {
-          if (err.status === 404) {
-            this.$router.replace({ path: '/' })
-          }
-        })
+    data() {
+      return {
+        loading: false,
+        error: null,
+        clueAnswer: null,
+      }
     },
-    ...mapActions(['fetchCrossword'])
-  },
-  computed: {
-    classes()  {
-      return this.crossword.size.cols >= 16 ? 'crossword-lg' : 'crossword-md'
-    },
-    ...mapState(['crossword'])
-  },
-  created() {
-    this.loadCrosswordOrFallback()
-  },
-  watch: {
-    '$route': 'loadCrosswordOrFallback'
-  }
-}
+    methods: {
+        focusClue(clue) {
+          this.$refs.crossword.focus(clue)
+        },
+        loadCrosswordOrFallback() {
+          const { date } = this.$router.currentRoute.params
+
+          this.loading = true
+          this.error = null
+
+          this.fetchCrossword(date)
+            .then(() => this.loading = false )
+            .catch((err) => {
+              this.loading = false
+              this.error == err
+              if (err.status === 404) {
+                this.$router.replace({ path: '/' })
+              }
+            })
+        },
+      ...mapActions(['fetchCrossword'])
+      },
+      computed: {
+        classes()  {
+          return this.crossword.size.cols >= 16 ? 'crossword-lg' : 'crossword-md'
+        },
+      ...mapState(['crossword'])
+      },
+      created() {
+        this.loading = true;
+        this.loadCrosswordOrFallback()
+      },
+      watch: {
+        '$route': 'loadCrosswordOrFallback'
+      }
+    }
 </script>
 
 <style lang="scss" scoped>
