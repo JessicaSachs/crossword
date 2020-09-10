@@ -4,24 +4,22 @@
     <form @reset="reset" @submit.prevent>
       <BaseButton data-testid="reset" type="reset">Restart Crossword 🗑</BaseButton>
       <BaseButton @click.native="toggleAnswersVisible" data-testid="auto-solve">✨ Magic Solve Button ✨</BaseButton>
-      <input id="magic-solver" type="checkbox" :value="clickToSolve" @change="updateClickToSolve($event.target.checked)"><label for="magic-solver">Click-to-solve</label>
     </form>
   </nav>
 </template>
 
 <script>
   import { toggleCrosswordSize } from '@/utils'
-  import { mapState, mapActions, mapGetters } from 'vuex'
+  import { mapActions, mapGetters } from 'vuex'
   import BaseButton from './BaseButton'
 
   export default {
     components: { BaseButton },
     computed: {
-      ...mapState(['crossword', 'clickToSolve']),
       ...mapGetters(['yesterday', 'tomorrow'])
     },
     methods: {
-      ...mapActions(['reset', 'toggleCrosswordVisible', 'toggleAnswersVisible', 'updateClickToSolve']),
+      ...mapActions(['reset', 'toggleAnswersVisible']),
       toggleCrosswordSize,
     }
   }
@@ -47,14 +45,6 @@
 
   p {
     font-weight: normal;
-  }
-
-  .size-controls,
-  .nav-controls {
-    ~ button + button {
-      display: inline-block;
-      margin-left: 4px;
-    }
   }
 
   form button {
