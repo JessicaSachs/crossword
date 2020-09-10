@@ -173,6 +173,6 @@ export default {
 
   @media (min-width: 1501px) {
     .crossword-lg { --scale: 1.1; }
-    .crossword-lg { --scale: 1.2; }
+    .crossword-md { --scale: 1.4; }
   }
 </style>
