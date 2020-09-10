@@ -100,7 +100,8 @@ export default new Vuex.Store({
     getNextCrossword({ getters, dispatch }) {
       return dispatch('fetchCrossword', getters.tomorrow)
     },
-    fetchCrossword({state, getters, commit}, date = state.date) {
+    fetchCrossword({state, getters, commit}, date) {
+      if (!date) date = state.date
       if (typeof date !== 'string') date = formatDate(date)
 
       return fetch(crosswordUrl(date))
@@ -165,6 +166,8 @@ export default new Vuex.Store({
 
           commit('setCrossword', payload)
           commit('setDate', date)
+
+          return payload
         })
     }
   },

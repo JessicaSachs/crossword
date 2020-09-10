@@ -8,8 +8,6 @@
               :clues="clues"
              @clue-selected="focusClue"
       >
-        <span v-if="clueAnswer && clueAnswer.direction === direction"
-              style="color: deeppink;"><b>{{ clueAnswer.number }}:</b> {{ clueAnswer.answer }}</span>
       </Clues>
       <section class="crossword" :class="classes">
         <h1>Component Testing with Crosswords</h1>
@@ -31,22 +29,15 @@ export default {
     Clues,
     Crossword
   },
-  data() {
-    return { clueAnswer: null, }
-  },
   methods: {
     focusClue(clue) {
-      if (this.clickToSolve) {
-        this.clueAnswer = clue
-      }
       this.$refs.crossword.focus(clue)
     },
     loadCrosswordOrFallback() {
       const { date } = this.$router.currentRoute.params
-      this.fetchCrossword(date || undefined)
+      this.fetchCrossword(date)
         .catch((err) => {
           if (err.status === 404) {
-            console.log('here')
             this.$router.replace({ path: '/' })
           }
         })
@@ -57,7 +48,7 @@ export default {
     classes()  {
       return this.crossword.size.cols >= 16 ? 'crossword-lg' : 'crossword-md'
     },
-    ...mapState(['crossword', 'clickToSolve'])
+    ...mapState(['crossword'])
   },
   created() {
     this.loadCrosswordOrFallback()
