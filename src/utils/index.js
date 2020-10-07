@@ -11,8 +11,18 @@ export const hash = s => s.split('').reduce((a,b)=>{a=((a<<5)-a)+b.charCodeAt(0)
 
 const matchNumber = text => parseInt(text.match(/(\d+)\w?/)[0], 10)
 
-const makeClue = (text, idx, direction, { answers }) => {
+const makeClue = (clue, idx, direction, { answers }) => {
+  let text = clue
+  if (typeof clue === 'object') {
+    text = clue.text
+    idx = clue.index
+  }
   const answer = answers[direction][idx]
+  try {
+    matchNumber(text)
+  } catch (err) {
+    debugger;
+  }
   return {
     direction,
     text,

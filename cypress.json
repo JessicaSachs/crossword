@@ -4,6 +4,6 @@
   "integrationFolder": "tests/e2e",
   "testFiles": "**/*.spec.js*",
   "experimentalComponentTesting": true,
-  "experimentalNetworkStubbing": true,
+  "experimentalFetchPolyfill": true,
   "componentFolder": "tests/components"
 }

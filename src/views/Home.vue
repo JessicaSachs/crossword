@@ -9,21 +9,17 @@
              @clue-selected="focusClue"
       >
       </Clues>
-      <section class="crossword" :class="classes" :key="loading">
+      <section data-testid="crossword-section"
+               class="crossword"
+               :class="classes" :key="loading">
         <h1>Component Testing with Crosswords</h1>
 
-        Loading: {{ loading }}, Error: {{ error }}
-
         <p v-if="error">
-
           Houston, we have a problem:
           <pre><code>{{ error }}</code></pre>
-
         </p>
 
-        <CrosswordSkeleton v-else-if="loading"/>
-
-        <Crossword v-else="loading" ref="crossword"/>
+        <Crossword :loading="loading" ref="crossword"/>
       </section>
     </template>
   </div>
@@ -32,14 +28,11 @@
 <script>
   import Clues from '@/components/Clues'
   import Crossword from '@/components/Crossword'
-  import SkeletonLoader from '@/components/CrosswordSkeleton'
   import { mapState, mapActions } from 'vuex'
-  import CrosswordSkeleton from '@/components/CrosswordSkeleton'
 
   export default {
     name: 'Home',
     components: {
-      CrosswordSkeleton,
       Clues,
       Crossword
     },
@@ -47,7 +40,6 @@
       return {
         loading: false,
         error: null,
-        clueAnswer: null,
       }
     },
     methods: {
@@ -82,7 +74,7 @@
       watch: {
         '$route': function () {
           this.loading = true
-          this.fetchCrossword()
+          this.loadCrosswordOrFallback()
         }
       }
     }

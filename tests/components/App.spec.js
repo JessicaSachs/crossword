@@ -1,55 +1,58 @@
 import { mount } from 'cypress-vue-unit-test'
 import App from '../../src/App'
-import { crossword } from '../fixtures/crosswords'
+import store from '@/store'
+import router from '@/router'
+import VueRouter from 'vue-router'
+import Vuex from 'vuex'
+
+const crossword = '[data-testid=crossword-section]'
+const title = '[data-testid=crossword-title]'
+const prev = '[data-testid=prev]'
+const next = '[data-testid=next]'
+const reset = '[data-testid=reset]'
+const cells = `${crossword} input`
 
 describe('App', () => {
   beforeEach(() => {
-    cy.viewport(1600, 1000)
-    mount(App)
-    cy.get('[data-testid=crossword]').as('crossword')
-    cy.get('[data-testid=crossword-title]').as('title')
-    cy.get('[data-testid=prev').as('prev')
-    cy.get('[data-testid=next').as('next')
-    cy.get('[data-testid=reset').as('reset')
+    mount(App, { plugins: [ Vuex, VueRouter ], router, store })
+    cy.wait(100)
   })
 
-  it('renders the crossword puzzle on load', function() {
-    expect(cy.get('@crossword')).to.exist
-  })
-
-  it('lets you navigate to previous days', () => {
-    cy.get('@title')
-      .then((titleEl) => {
-        const oldTitle = titleEl.text()
-
-        cy.get('@prev').click()
-        cy.get('@title').should('not.have.text', oldTitle)
-        cy.get('@next').click()
-        cy.get('@title').should('have.text', oldTitle)
-      })
-  })
-
-  it('rerenders the crossword when you go to another day', () => {
-    cy.get('@crossword')
-      .fillCrossword({ crossword, instant: true })
-      .get('@prev').click()
-      .getCrossword().should('be.empty')
-      .get('@next').click()
-      .getCrossword().should('be.empty')
-  })
-
-  it('resets the crossword correctly after you fill it in', () => {
-    cy.get('@crossword')
-      .fillCrossword({ crossword, partially: true })
-      .get('@title')
+  it('resets the crossword correctly after you fill it in',  (done) => {
+    cy.get(crossword).fillCrossword({ partially: true })
+    cy.get(title)
       .then((titleEl) => {
         let oldCrossword
         const oldTitle = titleEl.text()
-
-        cy.get('@crossword').getCrossword().then(text => { oldCrossword = text })
-          .get('@reset').click()
-          .get('@crossword').should('not.have.text', oldCrossword)
-          .get('@title').should('have.text', oldTitle)
+        cy.get(crossword).getCrossword().then(text => { oldCrossword = text })
+        cy.get(reset).click()
+        cy.get(crossword).should('not.have.text', oldCrossword)
+        cy.get(title).should('have.text', oldTitle).then(() => done())
       })
+  })
+
+  it('renders the crossword puzzle on load', function (done) {
+    cy.get(crossword).should('exist').then(() => done())
+  })
+
+  it('lets you navigate to previous days', function (done) {
+    let oldTitle
+    cy.get(title)
+    .then((titleEl) => {
+      oldTitle = titleEl.text()
+      cy.get(prev).click()
+      cy.get(title).should('not.have.text', oldTitle)
+      cy.get(next).click()
+      cy.get(title).should('have.text', oldTitle).then(() => done())
+    })
+  })
+
+  it('rerenders the crossword when you go to another day', (done) => {
+    cy.get(crossword).fillCrossword()
+    cy.get(prev).click()
+    cy.get(cells).getCrossword().should('be.empty')
+    cy.get(next).click()
+
+    cy.get(cells).getCrossword().should('be.empty').then(() => done())
   })
 })

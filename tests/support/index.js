@@ -14,6 +14,8 @@
 // ***********************************************************
 
 // Component Testing resets
+import {mount} from 'cypress-vue-unit-test'
+
 require('cypress-vue-unit-test/dist/support')
 
 // Import commands.js using ES2015 syntax:
@@ -22,6 +24,8 @@ require('cypress-vue-unit-test/dist/support')
 // Alternatively you can use CommonJS syntax:
 require('./commands')
 
+const { crossword, previousCrossword } = require('../fixtures/crosswords')
+
 require('@/styles/index.scss')
 
 if (window.Cypress) {
@@ -29,3 +33,13 @@ if (window.Cypress) {
   // to the Cypress top level error handler to fail the test
   // https://github.com/cypress-io/cypress/issues/7910
 }
+
+beforeEach(() => {
+  cy.viewport(1600, 1000)
+  // cy.route2('*/2012-02-14', crossword)
+})
+
+afterEach(() => {
+  // const el = document.getElementById('app')
+  // if (el) el.parentElement.remove(el)
+})

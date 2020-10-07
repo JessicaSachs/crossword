@@ -1,6 +1,6 @@
 $cellSize: calc(2rem * var(--scale, 1));
 
-.crossword-board {
+.crossword-board, .crossword-skeleton {
   margin: 0 auto;
   display: grid;
   position: relative;

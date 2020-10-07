@@ -3,21 +3,24 @@
     <template v-if="crossword">
       <header>
       <router-link :to="yesterday"><BaseButton data-testid="prev">👈👈 Prev</BaseButton></router-link>
-      <h3 v-html="title"></h3>
+      <h3 data-testid="crossword-title" v-html="title"></h3>
       <router-link :to="tomorrow"><BaseButton data-testid="next">Next 👉👉</BaseButton></router-link>
       </header>
-
-      <CrosswordBoard
-        ref="board"
-        :key="crossword.id"
-        :crossword="crossword"
-        :solved="solved"
-        :initial-board="board"
-        @update-board="setBoardState"
-      />
-
+      <transition name="fade" mode="out-in">
+        <CrosswordBoard
+            v-if="!loading"
+            ref="board"
+            :key="`${crossword.id}`"
+            :crossword="crossword"
+            :solved="solved"
+            :initial-board="board"
+            @update-board="setBoardState"
+        />
+        <CrosswordSkeleton data-testid="crossword-skeleton" :crossword="crossword" v-else></CrosswordSkeleton>
+      </transition>
       <p>By {{ crossword.author }}, {{ crossword.date }}</p>
     </template>
+
   </div>
 </template>
 
@@ -26,9 +29,13 @@
   import Clues from '@/components/Clues'
   import BaseButton from '@/components/BaseButton'
   import { mapState, mapActions, mapGetters } from 'vuex'
+  import CrosswordSkeleton from '@/components/CrosswordSkeleton'
 
   export default {
-    components: { CrosswordBoard, Clues, BaseButton },
+    props: {
+      loading: { default: false },
+    },
+    components: {CrosswordSkeleton, CrosswordBoard, Clues, BaseButton },
     computed: {
       title() {
         const date = new Date(this.crossword.date)
@@ -56,6 +63,16 @@
   }
 </script>
 
+<style scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity, height, width  .2s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  width: min-content;
+  height: min-content;
+}
+</style>
 <style scoped>
   p {
     text-align: center;
